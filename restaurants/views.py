@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Restaurant 
 # Create your views here.
 def index(request):
-    restaurant_list = Restaurant.objects.order_by('-name')#[:5]
+    restaurant_list = Restaurant.objects.order_by('name')#[:5]
     #template = loader.get_template('restaurants/index.html')
     context = {'restaurant_list': restaurant_list}
     return render(request, 'restaurants/index.html', context)
