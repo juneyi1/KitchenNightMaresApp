@@ -1,332 +1,1139 @@
 <html>
 <head>
   <title>Home</title>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+  <style type="text/css">
+  .main-content-wrap--full {
+    background: white;
+  }
+  .main-content-wrap {
+    min-width: 1020px;
+  }
+  .biz-details .top-shelf {
+    overflow: hidden;
+    min-width: 990px;
+    padding-bottom: 24px;
+    margin-bottom: -18px;
+    z-index: 1;
+  }
+  .top-shelf {
+    width: 100%;
+    position: relative;
+    padding-top: 15px;
+  }
+  .content-container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .biz-page-header {
+    position: relative;
+    /*display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;*/
+    display: flex;
+    -webkit-box-align: center;
+    /*-moz-box-align: center;
+    -ms-flex-align: center;
+    box-align: center;
+    -webkit-align-items: center;*/
+    align-items: center;
+    width: 100%;
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 1.3125em;
+  }
+  .biz-page-header .biz-page-header-left {
+    -webkit-box-flex: 1;
+    /*-moz-box-flex: 1;*/
+    -webkit-flex: 1;
+    /*-ms-flex: 1;*/
+    /* flex: 1; */
+    min-width: 0;
+    min-height: 0;
+    padding-right: 30px;
+  }
+  .u-space-t1 {
+    margin-top: 6px !important;
+  }
+  .claim-status .biz-page-title {
+    display: inline;
+  }
+  .biz-page-title.shortenough {
+    padding-top: 6px;
+    font-size: 36px;
+    line-height: 1.16667em;
+  }
+  .biz-page-title {
+    margin-bottom: 6px;
+  }
+  .embossed-text-white {
+    text-shadow: 0 1px rgba(255,255,255,0.7);
+  }
+  h1 {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: bold;
+    /*margin-bottom: 6px;
+    font-size: 30px;
+    line-height: 1.2em;*/
+    color: #333;
+    /*padding-top: 6px;*/
+  }
+  .claim-status_teaser {
+    font-size: 14px;
+    display: inline-block;
+    height: 21px;
+  }
+  .u-nowrap {
+    white-space: nowrap !important;
+  }
+  .claim-status .biz-main-info {
+    margin-top: 9px;
+  }
+  .u-hidden {
+    display: none !important;
+  }
+  .u-space-b0 {
+    margin-bottom: 0px !important;
+  }
+  .biz-page-header .rating-info {
+    margin-bottom: 9px;
+  }
+  .biz-page-header .rating-info .biz-rating {
+    float: left;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+  .biz-page-header .rating-info .biz-rating .rating-very-large {
+    margin-top: 0;
+  }
+  .i-stars.i-stars--large-4-half.rating-very-large {
+    background-color: rgba(0,0,0,0.1);
+  }
+  .biz-rating-very-large .rating-very-large {
+    float: left;
+    margin: -4px 6px 0 0;
+  }
+  .rating-very-large {
+    position: relative;
+    overflow: hidden;
+    /* text-shadow: 0 0 black; */
+    /* background-color: rgba(0,0,0,0.7); */
+  }
+  .i-stars--large-4-half {
+    width: 132px;
+    height: 24px;
+    background-position: 0 -192px;
+  }
+  .i-stars {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    background-size: 132px 560px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .biz-page-header .price-category {
+    float: left;
+  }
+  .price-category {
+      clear: both;
+  }
+  .price-range {
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .biz-page-header .category-str-list {
+    margin-right: 6px;
+  }
+  .mapbox-text ul {
+    margin: 5px;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  div, dd, dl, dt, li, ul{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  .map-box-address {
+    line-height: 18px;
+  }
+  .u-space-l4 {
+    margin-left: 24px !important;
+  }
+  b, strong, h5 {
+    font-weight: bold;
+  }
+  address {
+    display: block;
+    font-style: normal;
+    margin-bottom: 0;
+  }
+  /*.biz-page-subheader .showcase-container_inner {
+      position: relative;
+      width: 660px;
+      height: 220px;
+  }*/
+  .biz-page-subheader .top-shelf-grey {
+      z-index: -1;
+      position: absolute;
+      top: -9999px;
+      right: -9999px;
+      bottom: 0;
+      left: -9999px;
+  }
+  .top-shelf-grey {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .sidebar .bordered-rail .ywidget:first-child {
+    margin-top: -3px;
+  }
+  .ywidget {
+    /*float: right;*/
+    margin-top: -3px;
+    margin-bottom: 24px;
+  }
+  .biz-details h3 {
+    margin-bottom: 12px;
+  }
+  h3 {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.3125em;
+    color: #d32323;
+    margin: 0 0 6px;
+  }
+  .sidebar .biz-hours .hours-table {
+    margin-bottom: 6px;
+  }
+  .table-simple {
+    width: auto;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  tbody {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  .table tbody:first-child tr:first-child th {
+    border-top: 0;
+  }
+  .sidebar .biz-hours th {
+    min-width: 36px;
+    padding-right: 18px;
+  }
+  .table-simple th, .table-simple td {
+    padding: 0 1em 0 0;
+    border: none;
+    vertical-align: baseline;
+  }
+  .table th {
+    font-weight: bold;
+  }
+  .table th, .table td {
+    text-align: left;
+  }
+  th {
+    margin: 0;
+    font-size: 100%;
+    font: inherit;
+  }
+  .ylist>li {
+    margin-bottom: 12px;
+  }
+  .short-def-list dl {
+    padding-bottom: 6px;
+  }
+  .short-def-list dt {
+    margin-right: 0.25em;
+  }
+  .short-def-list dt, .short-def-list dd {
+    display: inline;
+  }
+  .short-def-list dd {
+    font-weight: bold;
+  }
+    </style>
 </head>
-<body>
 
-   <nav class="navbar navbar-expand-lg" style="background-color: #d32323;">
+<body>
+   <!-- <nav class="navbar navbar-expand-lg" style="background-color: #d32323;">
       <span class="navbar-text">
         Kitchen Nightmares
       </span>
-   <nav>
+   </nav> -->
+  <nav class="navbar navbar-expand-lg justify-content-between" style="background-color: #d32323;">
+      <a class="navbar-brand">Kitchen Nightmare</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </nav>
 
 
 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
 
-  <!-- <div class="biz-page-header-left claim-status">
-    <div class="u-space-t1">
-        <h1 class="biz-page-title embossed-text-white shortenough">
-            {{ restaurant.name }}
-        </h1>
-        <div class="u-nowrap claim-status_teaser js-claim-status-hover">
-          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-checkmark-badged icon--size-18 icon--blue-dark claim-status_icon u-space-r1 claim-status_icon--claimed">
-            <svg class="icon_svg">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_checkmark_badged"></use>
-            </svg>
-          </span>Claimed
-        </div>
-        <div class="u-hidden js-claim-status-hover-content">
-          <p class="u-space-b0">
-            This business has been claimed by the owner or a representative.
-                <a class="js-biz-page-claim-link" href="https://www.yelp-support.com/article/000032392?l=en_US" target="_blank">Learn more</a>
-          </p>
-        </div>
-    </div>
-    <div class="biz-main-info embossed-text-white">
-        <div class="rating-info clearfix">
-            <div class="biz-rating biz-rating-very-large clearfix">
-                <div class="i-stars i-stars--large-4-half rating-very-large" title="4.5 star rating">
-                  <img class="offscreen" height="303" src="https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png" width="84" alt="4.5 star rating">
-                </div>
-                <span class="review-count rating-qualifier">
-                    6620 reviews
-                </span>
-            </div>
-            <div class="rating-details">
-                <a href="javascript:;" class="chiclet-link chiclet-link--with-text show-tooltip js-rating-details">
-                  <span aria-hidden="true" style="width: 14px; height: 14px;" class="icon icon--14-histogram icon--size-14 icon--currentColor">
-                    <svg class="icon_svg">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#14x14_histogram"></use>
-                    </svg>
-                  </span>         Details
-                  <span class="offscreen">, Opens a popup</span>
-                  <span class="tooltip-wrapper">
-                      <span class="tooltip">Rating details</span>
+  <div class="main-content-wrap main-content-wrap--full">
+    <div class="top-shelf">
+      <div class="content-container js-biz-details">
+        <div class="biz-page-header">
+          <div class="biz-page-header-left claim-status">
+          <div class="u-space-t1">
+              <h1 class="biz-page-title embossed-text-white shortenough">
+                  {{ restaurant.name }}
+              </h1>
+              <div class="u-nowrap claim-status_teaser js-claim-status-hover">
+                <!-- <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-checkmark-badged icon--size-18 icon--blue-dark claim-status_icon u-space-r1 claim-status_icon--claimed">
+                  <svg class="icon_svg">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_checkmark_badged"></use>
+                  </svg>
+                </span> -->
+                Claimed
+              </div>
+              <div class="u-hidden js-claim-status-hover-content">
+                <p class="u-space-b0">
+                  This business has been claimed by the owner or a representative.
+                      <a class="js-biz-page-claim-link" href="https://www.yelp-support.com/article/000032392?l=en_US" target="_blank">Learn more</a>
+                </p>
+              </div>
+          </div>
+          <div class="biz-main-info embossed-text-white">
+              <div class="rating-info clearfix">
+                  <div class="biz-rating biz-rating-very-large clearfix">
+                      <div class="i-stars i-stars--large-4-half rating-very-large" title="4.5 star rating">
+                        <img class="offscreen" height="303" src="https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png" width="84" alt="4.5 star rating">
+                      </div>
+                      <span class="review-count rating-qualifier">
+                          6620 reviews
+                      </span>
+                  </div>
+                  <!-- <div class="rating-details">
+                      <a href="javascript:;" class="chiclet-link chiclet-link--with-text show-tooltip js-rating-details">
+                        <span aria-hidden="true" style="width: 14px; height: 14px;" class="icon icon--14-histogram icon--size-14 icon--currentColor">
+                          <svg class="icon_svg">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#14x14_histogram"></use>
+                          </svg>
+                        </span>         Details
+                        <span class="offscreen">, Opens a popup</span>
+                        <span class="tooltip-wrapper">
+                            <span class="tooltip">Rating details</span>
+                        </span>
+                      </a>
+                  </div> -->
+              </div>
+              <div class="price-category">
+                  <span class="bullet-after">
+                      <span class="business-attribute price-range">$$$</span>
                   </span>
-                </a>
-            </div>
+                  <span class="category-str-list">
+                      <a href="/c/chicago/newamerican">American (New)</a>
+                  </span>
+              </div>
+          </div>
+          <script>
+            (function() {
+                      var main = null;
+
+                      var main=function(c){var d=window.performance||window.mozPerformance||window.msPerformance||window.webkitPerformance;if(d){var a=d.mark||d.mozPerformance||d.msMark||d.webkitMark;var b=d.clearMarks||d.mozClearMarks||d.msClearMarks||d.webkitClearMarks;if(typeof a==="function"&&typeof b==="function"){b.call(d,c);a.call(d,c)}}};
+
+                      if (main === null) {
+                          throw 'invalid inline script, missing main declaration.';
+                      }
+                      main("yelp_header_title");
+                  })();
+          </script>
         </div>
-        <div class="price-category">
-            <span class="bullet-after">
-                <span class="business-attribute price-range">$$$</span>
-            </span>
-            <span class="category-str-list">
-                <a href="/c/chicago/newamerican">American (New)</a>
-            </span>
         </div>
-    </div>
-    <script>
-      (function() {
-                var main = null;
-
-                var main=function(c){var d=window.performance||window.mozPerformance||window.msPerformance||window.webkitPerformance;if(d){var a=d.mark||d.mozPerformance||d.msMark||d.webkitMark;var b=d.clearMarks||d.mozClearMarks||d.msClearMarks||d.webkitClearMarks;if(typeof a==="function"&&typeof b==="function"){b.call(d,c);a.call(d,c)}}};
-
-                if (main === null) {
-                    throw 'invalid inline script, missing main declaration.';
-                }
-                main("yelp_header_title");
-            })();
-    </script>
-  </div>
-  <div class="mapbox-container">
-      <div class="mapbox" data-lightbox-page-title="Directions - Girl &amp; the Goat - West Loop - Chicago, IL" data-component-bound="true">
-          <div class="mapbox-map">
-            <a href="/map/girl-and-the-goat-chicago" class="biz-map-directions" data-component-bound="true">
-              <img alt="Map" height="135" src="https://maps.googleapis.com/maps/api/staticmap?scale=2&amp;center=41.884105%2C-87.647944&amp;language=None&amp;zoom=15&amp;markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C41.884105%2C-87.647944&amp;client=gme-yelp&amp;sensor=false&amp;size=286x135&amp;signature=u0ktHJlugL-C7twvtPtba01YQ-I=" width="286">
-            </a>
-            <div class="lightbox-map hidden" data-map-state="{&quot;overlay_width&quot;: 335, &quot;fit_to_geobox&quot;: false, &quot;should_draw_checkbox&quot;: false, &quot;max_zoomlevel&quot;: null, &quot;service_areas&quot;: [], &quot;library&quot;: &quot;google&quot;, &quot;zoom_control_position&quot;: &quot;top_right&quot;, &quot;market&quot;: null, &quot;mo_map_possible&quot;: true, &quot;center&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;min_zoomlevel&quot;: null, &quot;zoom&quot;: 15, &quot;markers&quot;: {&quot;directions_marker&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;directions_marker&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/79f63ebc20db/ico/yelp_map/directions@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;directions&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7249ab345ac8/ico/yelp_map/directions_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;starred_business&quot;: {&quot;url&quot;: &quot;/biz/girl-and-the-goat-chicago&quot;, &quot;location&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;key&quot;: &quot;starred_business&quot;, &quot;hovercard_id&quot;: &quot;EYT-2CXi0KmIrrblrhvfRw&quot;, &quot;resource_type&quot;: &quot;business&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7ffd8e34c576/ico/yelp_map/annotation_star@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;starred&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/63e0e17c0579/ico/yelp_map/annotation_star_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;current_location&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;current_location&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;scaled_size&quot;: [46, 46], &quot;anchor_offset&quot;: [23, 23], &quot;name&quot;: &quot;current_location&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [46, 46]}}}, &quot;top_biz_bounds&quot;: null, &quot;ad_pin_color&quot;: null, &quot;hoods&quot;: [], &quot;scrollwheel_zoom&quot;: false}" data-business-id="qjnpkS8yZO8xcyEIy5OU9A" data-location-dropper-uri="/locations">
-              <div class="map-wrapper">
-                <div class="side-box">
-                <div class="transit-info-box island">
-                          <h3>Transit information</h3>
-                          <a class="expander" href="javascript:;">show less</a>
-                          <div class="contentbox">
-                            <span class="transit-stop">
-                              <b class="transit-line inline-block no-text" style="background-color: #009B3A; color: #FFFFFF;">
-                                    Green
-                              </b>
-                              <b class="transit-line inline-block no-text" style="background-color: #E27EA6; color: #FFFFFF;">
-                                    Pink
-                              </b>
-                              <strong>Clinton-Green</strong>
-                              <span class="transit-walking-details subtle-text nowrap">
-                                    0.34 mi
-                              </span>
-                            </span>
-                            <span class="transit-stop">
-                                <b class="transit-line inline-block no-text" style="background-color: #00A1DE; color: #FFFFFF;">
-                                    Blue
-                                </b>
-                                <strong>Grand-Blue</strong>
-                                <span class="transit-walking-details subtle-text nowrap">
-                                    0.49 mi
-                                </span>
-                            </span>
-                          </div>
-                </div>
-                  <div class="get-directions-box island">
-                    <div class="get-directions-content">
-                      <h3>Get directions</h3>
-                      <div class="contentbox">
-                        <form action="/map/girl-and-the-goat-chicago" method="GET" class="clearfix yform">
-                          <div class="section-header u-space-preventcollapse-block">
-                            <div class="tab-nav-container">
-                              <ul class="tab-nav js-tab-nav tab-nav--full js-tab-nav--full">
-                                  <li class="tab-nav_item">
-                                    <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav is-selected" data-tab-id="driving" href="javascript:;">
-                                      <span aria-label="Driving" style="width: 24px; height: 24px;" class="icon icon--24-car icon--size-24 icon--currentColor is-active tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                        <svg class="icon_svg">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_car"></use>
-                                        </svg>
-                                      </span>
-                                    </a>
-                                  </li>
-                                  <li class="tab-nav_item">
-                                    <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="transit" href="javascript:;">
-                                        <span aria-label="Public Transit" style="width: 24px; height: 24px;" class="icon icon--24-transit icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                            <svg class="icon_svg">
-                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_transit"></use>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                  </li>
-                                  <li class="tab-nav_item">
-                                    <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="walking" href="javascript:;">
-                                      <span aria-label="Walking" style="width: 24px; height: 24px;" class="icon icon--24-walk icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                        <svg class="icon_svg">
-                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_walk"></use>
-                                        </svg>
-                                      </span>
-                                    </a>
-                                  </li>
-                                  <li class="tab-nav_item tab-nav_item--last">
-                                    <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="cycling" href="javascript:;">
-                                      <span aria-label="Cycling" style="width: 24px; height: 24px;" class="icon icon--24-bicycle icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                        <svg class="icon_svg">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_bicycle"></use>
-                                        </svg>
-                                      </span>
-                                    </a>
-
-                                  </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="js-starting-point u-space-b2">
-                            <a class="swapper pull-right read-more" href="javascript:;">Swap start/end points</a>
-                            <label>Start from</label>
-                            <div class="location">
-                                <div class="user-location nested-icon-label">
-                                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 icon--linked i">
-                                      <svg class="icon_svg">
-                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
-                                      </svg>
+        <div class="biz-page-subheader">
+          <div class="mapbox-container">
+            <div class="mapbox" data-lightbox-page-title="Directions - Girl &amp; the Goat - West Loop - Chicago, IL" data-component-bound="true">
+                <div class="mapbox-map">
+                  <a href="/map/girl-and-the-goat-chicago" class="biz-map-directions" data-component-bound="true">
+                    <img alt="Map" height="135" src="https://maps.googleapis.com/maps/api/staticmap?scale=2&amp;center=41.884105%2C-87.647944&amp;language=None&amp;zoom=15&amp;markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C41.884105%2C-87.647944&amp;client=gme-yelp&amp;sensor=false&amp;size=286x135&amp;signature=u0ktHJlugL-C7twvtPtba01YQ-I=" width="286">
+                  </a>
+                  <div class="lightbox-map hidden" data-map-state="{&quot;overlay_width&quot;: 335, &quot;fit_to_geobox&quot;: false, &quot;should_draw_checkbox&quot;: false, &quot;max_zoomlevel&quot;: null, &quot;service_areas&quot;: [], &quot;library&quot;: &quot;google&quot;, &quot;zoom_control_position&quot;: &quot;top_right&quot;, &quot;market&quot;: null, &quot;mo_map_possible&quot;: true, &quot;center&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;min_zoomlevel&quot;: null, &quot;zoom&quot;: 15, &quot;markers&quot;: {&quot;directions_marker&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;directions_marker&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/79f63ebc20db/ico/yelp_map/directions@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;directions&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7249ab345ac8/ico/yelp_map/directions_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;starred_business&quot;: {&quot;url&quot;: &quot;/biz/girl-and-the-goat-chicago&quot;, &quot;location&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;key&quot;: &quot;starred_business&quot;, &quot;hovercard_id&quot;: &quot;EYT-2CXi0KmIrrblrhvfRw&quot;, &quot;resource_type&quot;: &quot;business&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7ffd8e34c576/ico/yelp_map/annotation_star@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;starred&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/63e0e17c0579/ico/yelp_map/annotation_star_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;current_location&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;current_location&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;scaled_size&quot;: [46, 46], &quot;anchor_offset&quot;: [23, 23], &quot;name&quot;: &quot;current_location&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [46, 46]}}}, &quot;top_biz_bounds&quot;: null, &quot;ad_pin_color&quot;: null, &quot;hoods&quot;: [], &quot;scrollwheel_zoom&quot;: false}" data-business-id="qjnpkS8yZO8xcyEIy5OU9A" data-location-dropper-uri="/locations">
+                    <div class="map-wrapper">
+                      <!-- <div class="side-box">
+                        <div class="transit-info-box island">
+                                <h3>Transit information</h3>
+                                <a class="expander" href="javascript:;">show less</a>
+                                <div class="contentbox">
+                                  <span class="transit-stop">
+                                    <b class="transit-line inline-block no-text" style="background-color: #009B3A; color: #FFFFFF;">
+                                          Green
+                                    </b>
+                                    <b class="transit-line inline-block no-text" style="background-color: #E27EA6; color: #FFFFFF;">
+                                          Pink
+                                    </b>
+                                    <strong>Clinton-Green</strong>
+                                    <span class="transit-walking-details subtle-text nowrap">
+                                          0.34 mi
                                     </span>
-                                    <input autocomplete="off" id="js-dropper-text" name="location" type="text">
+                                  </span>
+                                  <span class="transit-stop">
+                                      <b class="transit-line inline-block no-text" style="background-color: #00A1DE; color: #FFFFFF;">
+                                          Blue
+                                      </b>
+                                      <strong>Grand-Blue</strong>
+                                      <span class="transit-walking-details subtle-text nowrap">
+                                          0.49 mi
+                                      </span>
+                                  </span>
                                 </div>
-                            </div>
-                          </div>
-                          <div class="js-ending-point u-space-b2">
-                            <strong class="hidden">Start from</strong>
-                            <a class="swapper pull-right read-more hidden" href="javascript:;">Swap start/end points</a>
-                            <div class="location">
-                                <div class="business-location media-block">
-                                    <div class="media-avatar">
-                                        <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 icon--error">
-                                          <svg class="icon_svg">
-                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
-                                          </svg>
-                                        </span>
-                                    </div>
-                                    <div class="media-story">
-                                      <div class="media-title">
-                                          <a class="biz-name js-analytics-click" data-analytics-label="biz-name" href="/biz/girl-and-the-goat-chicago" data-hovercard-id="EYT-2CXi0KmIrrblrhvfRw"><span>Girl &amp; the Goat</span></a>
+                        </div>
+                        <div class="get-directions-box island">
+                          <div class="get-directions-content">
+                            <h3>Get directions</h3>
+                            <div class="contentbox">
+                              <form action="/map/girl-and-the-goat-chicago" method="GET" class="clearfix yform">
+                                <div class="section-header u-space-preventcollapse-block">
+                                  <div class="tab-nav-container">
+                                    <ul class="tab-nav js-tab-nav tab-nav--full js-tab-nav--full">
+                                        <li class="tab-nav_item">
+                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav is-selected" data-tab-id="driving" href="javascript:;">
+                                            <span aria-label="Driving" style="width: 24px; height: 24px;" class="icon icon--24-car icon--size-24 icon--currentColor is-active tab-link_icon js-tab-link_icon tab-link_icon-wrap">
+                                              <svg class="icon_svg">
+                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_car"></use>
+                                              </svg>
+                                            </span>
+                                          </a>
+                                        </li>
+                                        <li class="tab-nav_item">
+                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="transit" href="javascript:;">
+                                              <span aria-label="Public Transit" style="width: 24px; height: 24px;" class="icon icon--24-transit icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
+                                                  <svg class="icon_svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_transit"></use>
+                                                  </svg>
+                                              </span>
+                                          </a>
+                                        </li>
+                                        <li class="tab-nav_item">
+                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="walking" href="javascript:;">
+                                            <span aria-label="Walking" style="width: 24px; height: 24px;" class="icon icon--24-walk icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
+                                              <svg class="icon_svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_walk"></use>
+                                              </svg>
+                                            </span>
+                                          </a>
+                                        </li>
+                                        <li class="tab-nav_item tab-nav_item--last">
+                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="cycling" href="javascript:;">
+                                            <span aria-label="Cycling" style="width: 24px; height: 24px;" class="icon icon--24-bicycle icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
+                                              <svg class="icon_svg">
+                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_bicycle"></use>
+                                              </svg>
+                                            </span>
+                                          </a>
+
+                                        </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="js-starting-point u-space-b2">
+                                  <a class="swapper pull-right read-more" href="javascript:;">Swap start/end points</a>
+                                  <label>Start from</label>
+                                  <div class="location">
+                                      <div class="user-location nested-icon-label">
+                                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 icon--linked i">
+                                            <svg class="icon_svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
+                                            </svg>
+                                          </span>
+                                          <input autocomplete="off" id="js-dropper-text" name="location" type="text">
                                       </div>
-                                      <address>809 W Randolph St, Chicago, IL 60607</address>
-                                    </div>
+                                  </div>
                                 </div>
+                                <div class="js-ending-point u-space-b2">
+                                  <strong class="hidden">Start from</strong>
+                                  <a class="swapper pull-right read-more hidden" href="javascript:;">Swap start/end points</a>
+                                  <div class="location">
+                                      <div class="business-location media-block">
+                                          <div class="media-avatar">
+                                              <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 icon--error">
+                                                <svg class="icon_svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
+                                                </svg>
+                                              </span>
+                                          </div>
+                                          <div class="media-story">
+                                            <div class="media-title">
+                                                <a class="biz-name js-analytics-click" data-analytics-label="biz-name" href="/biz/girl-and-the-goat-chicago" data-hovercard-id="EYT-2CXi0KmIrrblrhvfRw"><span>Girl &amp; the Goat</span></a>
+                                            </div>
+                                            <address>809 W Randolph St, Chicago, IL 60607</address>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <button type="submit" value="submit" class="ybtn ybtn--primary ybtn--small get-directions-button"><span>Get directions</span></button>
+                              </form>
+                              <h3 class="result-header hidden"></h3>
+                              <div class="textual-results"></div>
                             </div>
                           </div>
-                          <button type="submit" value="submit" class="ybtn ybtn--primary ybtn--small get-directions-button"><span>Get directions</span></button>
-                        </form>
-                        <h3 class="result-header hidden"></h3>
-                        <div class="textual-results"></div>
+                        </div>
+                      </div> -->
+                      <div class="yelp-map-container directions-map">
+                        <div class="engine-container"></div>
                       </div>
                     </div>
                   </div>
-              </div>
-                <div class="yelp-map-container directions-map">
-                  <div class="engine-container"></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="mapbox-text">
-            <ul>
-                <li class="u-relative">
-                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 u-absolute u-sticky-top">
-                      <svg class="icon_svg">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
-                      </svg>
-                    </span>
-                    <a href="/biz_attribute?biz_id=qjnpkS8yZO8xcyEIy5OU9A" class="link-more icon-wrapper mapbox-edit">
-                      <span aria-hidden="true" style="width: 14px; height: 14px;" class="icon icon--14-pencil icon--size-14 icon--linked u-space-r-half">
-                        <svg class="icon_svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#14x14_pencil"></use>
-                        </svg>
-                      </span>
-                      <span>Edit</span>
-                    </a>
-                    <div class="map-box-address u-space-l4">
-                      <strong class="street-address">
-                          <address>809 W Randolph St<br>Chicago, IL 60607</address>
-                      </strong>
-                      <span class="cross-streets">
-                          b/t Green St &amp; Halsted St
-                      </span>
-                        <br>
-                          <span class="neighborhood-str-list">West Loop, Near West Side</span>
-                    </div>
-                </li>
-                <li class="clearfix">
-                  <div>
-                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-directions icon--size-18">
-                      <svg class="icon_svg">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_directions"></use>
-                      </svg>
-                    </span>
-                    <a href="/map/girl-and-the-goat-chicago" class="biz-directions" data-component-bound="true">Get Directions</a>
-                  </div>
-                </li>
-                  <li class="clearfix">
-                      <div class="transit">
-                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-transit icon--size-18 u-pull-left u-space-r1">
+                <div class="mapbox-text">
+                  <ul>
+                      <li class="u-relative">
+                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 u-absolute u-sticky-top">
+                            <!-- <svg class="icon_svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
+                            </svg> -->
+                          </span>
+                          <a href="/biz_attribute?biz_id=qjnpkS8yZO8xcyEIy5OU9A" class="link-more icon-wrapper mapbox-edit">
+                            <span aria-hidden="true" style="width: 14px; height: 14px;" class="icon icon--14-pencil icon--size-14 icon--linked u-space-r-half">
+                              <!-- <svg class="icon_svg">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#14x14_pencil"></use>
+                              </svg> -->
+                            </span>
+                            <!-- <span>Edit</span> -->
+                          </a>
+                          <div class="map-box-address u-space-l4">
+                            <strong class="street-address">
+                                <address>809 W Randolph St<br>Chicago, IL 60607</address>
+                            </strong>
+                            <span class="cross-streets">
+                                b/t Green St &amp; Halsted St
+                            </span>
+                              <br>
+                                <span class="neighborhood-str-list">West Loop, Near West Side</span>
+                          </div>
+                      </li>
+                      <li>identifier: {{ restaurant.identifier }}</li>
+                      <li>first review date: {{ restaurant.first_review_date }}</li>
+                      <li>last review date: {{ restaurant.last_review_date }}</li>
+                      <li>permanently closed: {{ restaurant.permanently_closed }}</li>
+
+                      <!-- <li class="clearfix">
+                        <div>
+                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-directions icon--size-18">
                             <svg class="icon_svg">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_transit"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_directions"></use>
                             </svg>
                           </span>
-                          <span class="offscreen">Transit information</span>
-                          <a href="/map/girl-and-the-goat-chicago" class="biz-transit-directions u-decoration-none" data-component-bound="true">
-                            <b class="transit-line inline-block no-text" style="background-color: #009B3A; color: #FFFFFF;">
-                                Green
-                            </b>
-                            <b class="transit-line inline-block no-text" style="background-color: #E27EA6; color: #FFFFFF;">
-                                Pink
-                            </b>
-                          </a>
-                          <span>Clinton-Green         and <a class="biz-transit-directions" href="/map/girl-and-the-goat-chicago" data-component-bound="true">1 more station</a>
+                          <a href="/map/girl-and-the-goat-chicago" class="biz-directions" data-component-bound="true">Get Directions</a>
+                        </div>
+                      </li>
+                      <li class="clearfix">
+                            <div class="transit">
+                                <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-transit icon--size-18 u-pull-left u-space-r1">
+                                  <svg class="icon_svg">
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_transit"></use>
+                                  </svg>
+                                </span>
+                                <span class="offscreen">Transit information</span>
+                                <a href="/map/girl-and-the-goat-chicago" class="biz-transit-directions u-decoration-none" data-component-bound="true">
+                                  <b class="transit-line inline-block no-text" style="background-color: #009B3A; color: #FFFFFF;">
+                                      Green
+                                  </b>
+                                  <b class="transit-line inline-block no-text" style="background-color: #E27EA6; color: #FFFFFF;">
+                                      Pink
+                                  </b>
+                                </a>
+                                <span>Clinton-Green         and <a class="biz-transit-directions" href="/map/girl-and-the-goat-chicago" data-component-bound="true">1 more station</a>
+                                </span>
+                            </div>
+                        </li>
+                      <li>
+                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-phone icon--size-18">
+                            <svg class="icon_svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_phone"></use>
+                            </svg>
                           </span>
-                      </div>
-                  </li>
-                  <li>
-                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-phone icon--size-18">
-                      <svg class="icon_svg">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_phone"></use>
-                      </svg>
-                    </span>
-                    <span class="offscreen">Phone number</span>
-                    <span class="biz-phone">
-                        (312) 492-6262
-                    </span>
-                  </li>
-                  <li>
-                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-external-link icon--size-18">
-                      <svg class="icon_svg">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_external_link"></use>
-                      </svg>
-                    </span>
-                    <span class="biz-website js-add-url-tagging">
-                      <span class="offscreen">Business website</span>
-                      <a href="/biz_redir?url=http%3A%2F%2Fwww.girlandthegoat.com%2F&amp;website_link_type=website&amp;src_bizid=qjnpkS8yZO8xcyEIy5OU9A&amp;cachebuster=1509900018&amp;s=3a4d17f248327867069e33f8b5169f7051f0b44618823bc243be60688822aef2" target="_blank" rel="noopener">girlandthegoat.com</a>
-                    </span>
-                  </li>
-                  <li class="clearfix">
-                    <div>
-                      <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-mobile icon--size-18">
-                        <svg class="icon_svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_mobile"></use>
-                        </svg>
-                      </span>
-                      <a href="javascript:;" class="js-biz-to-phone">Send to your Phone</a>
-                    </div>
-                  </li>
-            </ul>
+                          <span class="offscreen">Phone number</span>
+                          <span class="biz-phone">
+                              (312) 492-6262
+                          </span>
+                        </li>
+                      <li>
+                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-external-link icon--size-18">
+                            <svg class="icon_svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_external_link"></use>
+                            </svg>
+                          </span>
+                          <span class="biz-website js-add-url-tagging">
+                            <span class="offscreen">Business website</span>
+                            <a href="/biz_redir?url=http%3A%2F%2Fwww.girlandthegoat.com%2F&amp;website_link_type=website&amp;src_bizid=qjnpkS8yZO8xcyEIy5OU9A&amp;cachebuster=1509900018&amp;s=3a4d17f248327867069e33f8b5169f7051f0b44618823bc243be60688822aef2" target="_blank" rel="noopener">girlandthegoat.com</a>
+                          </span>
+                        </li>
+                      <li class="clearfix">
+                          <div>
+                            <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-mobile icon--size-18">
+                              <svg class="icon_svg">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_mobile"></use>
+                              </svg>
+                            </span>
+                            <a href="javascript:;" class="js-biz-to-phone">Send to your Phone</a>
+                          </div>
+                        </li> -->
+                  </ul>
+                </div>
+            </div>
+            <!-- <span itemscope="" class="hidden" itemtype="http://data-vocabulary.org/Breadcrumb">
+              <a href="/c/chicago/restaurants" itemprop="url">
+                  <span itemprop="title">Restaurants</span>
+              </a>
+              <span itemscope="" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a href="/c/chicago/newamerican" itemprop="url">
+                                <span itemprop="title">American (New)</span>
+                  </a>
+              </span> -->
+            </span>
           </div>
+          <div class="showcase-container">
+            <div class="showcase-container_inner showcase showcase-4-photo" data-component-bound="true">
+              <div class="top-shelf-grey"></div>
+              <div class="biz-hours"> <!--<div class="ywidget biz-hours"> -->
+                <h3>
+                    Hours
+                </h3>
+                <table class="table table-simple hours-table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Mon</th>
+                        <td>
+                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                        </td>
+                        <td class="extra">
+                        </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Tue</th>
+                        <td>
+                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                        </td>
+                        <td class="extra">
+                        </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Wed</th>
+                        <td>
+                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                        </td>
+                        <td class="extra">
+                                <!-- <span class="nowrap closed">Closed now</span> -->
+                        </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Thu</th>
+                        <td>
+                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                        </td>
+                        <td class="extra">
+                        </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Fri</th>
+                      <td>
+                          <span class="nowrap">4:30 pm</span> - <span class="nowrap">12:00 am</span>
+                      </td>
+                      <td class="extra">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sat</th>
+                      <td>
+                          <span class="nowrap">4:30 pm</span> - <span class="nowrap">12:00 am</span>
+                      </td>
+                      <td class="extra">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sun</th>
+                      <td>
+                          <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                      </td>
+                      <td class="extra">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ywidget">
+                          <h3>More business info</h3>
+
+                          <ul class="ylist">
+                                      <li>
+                          <div class="short-def-list">
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Takes Reservations
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Delivery
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Take-out
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Accepts Credit Cards
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Accepts Apple Pay
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Accepts Android Pay
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Good For
+                                          </dt>
+                                          <dd>
+                                              Dinner
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Parking
+                                          </dt>
+                                          <dd>
+                                              Valet
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Bike Parking
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Wheelchair Accessible
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Good for Kids
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Good for Groups
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Attire
+                                          </dt>
+                                          <dd>
+                                              Casual
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Ambience
+                                          </dt>
+                                          <dd>
+                                              Trendy
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Noise Level
+                                          </dt>
+                                          <dd>
+                                              Loud
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Alcohol
+                                          </dt>
+                                          <dd>
+                                              Full Bar
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Outdoor Seating
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Wi-Fi
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Has TV
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Waiter Service
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Caters
+                                          </dt>
+                                          <dd>
+                                              No
+                                          </dd>
+                                      </dl>
+
+                                      <dl>
+                                          <dt class="attribute-key">
+                                                  Gender Neutral Restrooms
+                                          </dt>
+                                          <dd>
+                                              Yes
+                                          </dd>
+                                      </dl>
+
+                          </div>
+                      </li>
+
+                          </ul>
+                      </div>
+              <!-- <div class="showcase-footer-links">
+                <a class="see-more u-pull-right" href="/biz_photos/girl-and-the-goat-chicago">
+                  <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-grid icon--size-18 u-space-r-half">
+                    <svg class="icon_svg">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_grid"></use>
+                    </svg>
+                  </span>See all 9329
+                </a>
+              </div>
+              <div class="lightbox-media-parent slider-outer" data-ad-logging-csrf="70b6ad7b537b161f7e4e6005546711ae568d3aab49dd324b55b7fcfa9895f403" data-ad-logging-uri="/ad_acknowledgment" data-ga-path="media_lightbox/servlet:biz_details/type:biz" data-logging-csrf="6f890e1bf6b808fd0049825ec15b94a600364c87f37b777114c0b3216571afd3" data-logging-uri="/biz_photos/qjnpkS8yZO8xcyEIy5OU9A/log_views" data-media-count="9329" data-media-url="/biz_photos/get_media_slice/qjnpkS8yZO8xcyEIy5OU9A" data-starting-index="0" aria-hidden="true">
+                <div class="showcase-photos prev">
+                  <div class="js-photo photo photo-1" data-media-id="VV9zMBto9nw_xKyi5AElMQ" data-media-index="7260">
+                    <div class="showcase-photo-box">
+                          <a href="/biz_photos/girl-and-the-goat-chicago?select=VV9zMBto9nw_xKyi5AElMQ">
+                            <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Warm marinated olives" class="photo-box-img" height="250" src="https://s3-media4.fl.yelpcdn.com/bphoto/VV9zMBto9nw_xKyi5AElMQ/ls.jpg" srcset="https://s3-media4.fl.yelpcdn.com/bphoto/VV9zMBto9nw_xKyi5AElMQ/258s.jpg 1.03x,https://s3-media4.fl.yelpcdn.com/bphoto/VV9zMBto9nw_xKyi5AElMQ/348s.jpg 1.39x,https://s3-media4.fl.yelpcdn.com/bphoto/VV9zMBto9nw_xKyi5AElMQ/300s.jpg 1.20x" width="250">
+                          </a>
+                    </div>
+                    <div class="photo-box-overlay js-overlay">
+                      <div class="media-block photo-box-overlay_caption">
+                        <div class="media-avatar avatar">
+                            <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                                <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                                  <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="media-story">
+                                  <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=VV9zMBto9nw_xKyi5AElMQ">
+                                      Warm marinated olives
+                                  </a>
+                                  <span class="author">
+                                          by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                                  </span>
+                                </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="js-photo photo photo-2" data-media-id="5kg_V2VxERLsbXhl8egjjA" data-media-index="7261">
+                    <div class="showcase-photo-box">
+                      <a href="/biz_photos/girl-and-the-goat-chicago?select=5kg_V2VxERLsbXhl8egjjA">
+                          <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Fried pickles" class="photo-box-img" height="250" src="https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/ls.jpg" srcset="https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/258s.jpg 1.03x,https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/348s.jpg 1.39x,https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/300s.jpg 1.20x" width="250">
+                      </a>
+                    </div>
+                    <div class="photo-box-overlay js-overlay">
+                        <div class="media-block photo-box-overlay_caption">
+                          <div class="media-avatar avatar">
+                            <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                              <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                                <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                              </a>
+                            </div>
+                          </div>
+                          <div class="media-story">
+                            <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=5kg_V2VxERLsbXhl8egjjA">
+                                Fried pickles
+                            </a>
+                            <span class="author">
+                                    by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                            </span>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="js-photo photo photo-3" data-media-id="hX_e5pmAsJO8EvRMY32ZFg" data-media-index="7262">
+                    <div class="showcase-photo-box">
+                          <a href="/biz_photos/girl-and-the-goat-chicago?select=hX_e5pmAsJO8EvRMY32ZFg">
+                            <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Maize and blue bread" class="photo-box-img" height="250" src="https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/ls.jpg" srcset="https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/258s.jpg 1.03x,https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/348s.jpg 1.39x,https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/300s.jpg 1.20x" width="250">
+                          </a>
+                    </div>
+                    <div class="photo-box-overlay js-overlay">
+                            <div class="media-block photo-box-overlay_caption">
+                              <div class="media-avatar avatar">
+                                <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                                  <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                                    <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="media-story">
+                                <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=hX_e5pmAsJO8EvRMY32ZFg">
+                                    Maize and blue bread
+                                </a>
+                                <span class="author">
+                                        by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                                </span>
+                              </div>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="showcase-photos current">
+                  <div class="js-photo photo photo-1" data-media-id="5kg_V2VxERLsbXhl8egjjA" data-media-index="7261">
+                    <div class="showcase-photo-box">
+                        <a href="/biz_photos/girl-and-the-goat-chicago?select=5kg_V2VxERLsbXhl8egjjA">
+                          <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Fried pickles" class="photo-box-img" height="250" src="https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/ls.jpg" srcset="https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/258s.jpg 1.03x,https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/348s.jpg 1.39x,https://s3-media1.fl.yelpcdn.com/bphoto/5kg_V2VxERLsbXhl8egjjA/300s.jpg 1.20x" width="250">
+                        </a>
+                    </div>
+                    <div class="photo-box-overlay js-overlay">
+                      <div class="media-block photo-box-overlay_caption">
+                        <div class="media-avatar avatar">
+                          <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                            <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                              <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="media-story">
+                          <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=5kg_V2VxERLsbXhl8egjjA">
+                              Fried pickles
+                          </a>
+                          <span class="author">
+                                  by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="js-photo photo photo-2" data-media-id="hX_e5pmAsJO8EvRMY32ZFg" data-media-index="7262">
+                    <div class="showcase-photo-box">
+                        <a href="/biz_photos/girl-and-the-goat-chicago?select=hX_e5pmAsJO8EvRMY32ZFg">
+                          <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Maize and blue bread" class="photo-box-img" height="250" src="https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/ls.jpg" srcset="https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/258s.jpg 1.03x,https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/348s.jpg 1.39x,https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/300s.jpg 1.20x" width="250">
+                        </a>
+                    </div>
+                    <div class="photo-box-overlay js-overlay">
+                      <div class="media-block photo-box-overlay_caption">
+                        <div class="media-avatar avatar">
+                          <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                            <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                              <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                            </a>
+                          </div>
+                        </div>
+                        <div class="media-story">
+                          <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=hX_e5pmAsJO8EvRMY32ZFg">
+                              Maize and blue bread
+                          </a>
+                          <span class="author">
+                                  by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="js-photo photo photo-3" data-media-id="seqJSlyvCr61ABhdKTeZxQ" data-media-index="7263">
+                    <div class="showcase-photo-box">
+                        <a href="/biz_photos/girl-and-the-goat-chicago?select=seqJSlyvCr61ABhdKTeZxQ">
+                          <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Shishito peppers" class="photo-box-img" height="250" src="https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/ls.jpg" srcset="https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/258s.jpg 1.03x,https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/348s.jpg 1.39x,https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/300s.jpg 1.20x" width="250">
+                        </a>
+                    </div>
+                    <div class="photo-box-overlay js-overlay">
+                      <div class="media-block photo-box-overlay_caption">
+                          <div class="media-avatar avatar">
+                            <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                              <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                                <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                              </a>
+                            </div>
+                          </div>
+                          <div class="media-story">
+                            <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=seqJSlyvCr61ABhdKTeZxQ">
+                                Shishito peppers
+                            </a>
+                            <span class="author">
+                                    by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                            </span>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="showcase-photos next">
+                  <div class="js-photo photo photo-1" data-media-id="hX_e5pmAsJO8EvRMY32ZFg" data-media-index="7262">
+                    <div class="showcase-photo-box">
+                        <a href="/biz_photos/girl-and-the-goat-chicago?select=hX_e5pmAsJO8EvRMY32ZFg">
+                          <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Maize and blue bread" class="photo-box-img" height="250" src="https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/ls.jpg" srcset="https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/258s.jpg 1.03x,https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/348s.jpg 1.39x,https://s3-media2.fl.yelpcdn.com/bphoto/hX_e5pmAsJO8EvRMY32ZFg/300s.jpg 1.20x" width="250">
+                        </a>
+                    </div>
+                        <div class="photo-box-overlay js-overlay">
+                          <div class="media-block photo-box-overlay_caption">
+                            <div class="media-avatar avatar">
+                              <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                                <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                                  <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                                </a>
+                              </div>
+                            </div>
+                            <div class="media-story">
+                              <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=hX_e5pmAsJO8EvRMY32ZFg">
+                                  Maize and blue bread
+                              </a>
+                              <span class="author">
+                                      by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="js-photo photo photo-2" data-media-id="seqJSlyvCr61ABhdKTeZxQ" data-media-index="7263">
+                    <div class="showcase-photo-box">
+                        <a href="/biz_photos/girl-and-the-goat-chicago?select=seqJSlyvCr61ABhdKTeZxQ">
+                          <img alt="Photo of Girl &amp; the Goat - Chicago, IL, United States. Shishito peppers" class="photo-box-img" height="250" src="https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/ls.jpg" srcset="https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/258s.jpg 1.03x,https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/348s.jpg 1.39x,https://s3-media3.fl.yelpcdn.com/bphoto/seqJSlyvCr61ABhdKTeZxQ/300s.jpg 1.20x" width="250">
+                        </a>
+                    </div>
+                      <div class="photo-box-overlay js-overlay">
+                        <div class="media-block photo-box-overlay_caption">
+                            <div class="media-avatar avatar">
+                              <div class="photo-box pb-30s" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg">
+                                <a href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" class="js-analytics-click" data-analytics-label="user-photo">
+                                  <img alt="Molly A." class="photo-box-img" height="30" src="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/30s.jpg" srcset="https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/60s.jpg 2.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/90s.jpg 3.00x,https://s3-media4.fl.yelpcdn.com/photo/HEFJekz_dG60dK74elMbsQ/ss.jpg 1.33x" width="30">
+                                </a>
+                              </div>
+                            </div>
+                            <div class="media-story">
+                              <a class="photo-desc" href="/biz_photos/girl-and-the-goat-chicago?select=seqJSlyvCr61ABhdKTeZxQ">
+                                  Shishito peppers
+                              </a>
+                              <span class="author">
+                                      by         <a class="user-display-name js-analytics-click" href="/user_details?userid=kcPqdrupHzMnY78ZgdplvQ" data-hovercard-id="imDgIpvEWzI4hixz-AG4Eg" data-analytics-label="about_me" id="dropdown_user-name">Molly A.</a>
+                              </span>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav nav-left">
+                <div class="arrow">
+                  <span class="icon icon--48-chevron-left icon--size-48 icon--inverse icon--fallback-inverted" aria-hidden="true" style="width: 48px; height: 48px;"><svg class="icon_svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#48x48_chevron_left"></use></svg></span></div></div><div class="nav nav-right is-disabled"><div class="arrow"><span class="icon icon--48-chevron-right icon--size-48 icon--inverse icon--fallback-inverted" aria-hidden="true" style="width: 48px; height: 48px;">
+                    <svg class="icon_svg">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#48x48_chevron_right">
+                      </use>
+                    </svg>
+                  </span>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
-      <span itemscope="" class="hidden" itemtype="http://data-vocabulary.org/Breadcrumb">
-      <a href="/c/chicago/restaurants" itemprop="url">
-          <span itemprop="title">Restaurants</span>
-      </a>
-      <span itemscope="" itemprop="child" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/c/chicago/newamerican" itemprop="url">
-                        <span itemprop="title">American (New)</span>
-          </a>
-      </span>
-      </span>
+    </div>
   </div>
-  This is body
-  <ul>
-      <li>identifier: {{ restaurant.identifier }}</li>
-      <li>first review date: {{ restaurant.first_review_date }}</li>
-      <li>last review date: {{ restaurant.last_review_date }}</li>
-      <li>permanently closed: {{ restaurant.permanently_closed }}</li>
-  </ul> -->
+
+  <!-- This is body -->
+
 </body>
 </html>
