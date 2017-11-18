@@ -9,6 +9,10 @@
   .main-content-wrap {
     min-width: 1020px;
   }
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 36px;
+  }
   .biz-details .top-shelf {
     overflow: hidden;
     min-width: 990px;
@@ -110,9 +114,6 @@
   .biz-page-header .rating-info .biz-rating .rating-very-large {
     margin-top: 0;
   }
-  .i-stars.i-stars--large-4-half.rating-very-large {
-    background-color: rgba(0,0,0,0.1);
-  }
   .biz-rating-very-large .rating-very-large {
     float: left;
     margin: -4px 6px 0 0;
@@ -124,15 +125,25 @@
     /* background-color: rgba(0,0,0,0.7); */
   }
   .i-stars--large-4-half {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
     width: 132px;
     height: 24px;
     background-position: 0 -192px;
   }
   .i-stars {
-    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    /*background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;*/
     background-size: 132px 560px;
     display: inline-block;
     vertical-align: middle;
+  }
+  .offscreen {
+    clip: rect(0 0 0 0);
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
   }
   .biz-page-header .price-category {
     float: left;
@@ -146,6 +157,27 @@
   }
   .biz-page-header .category-str-list {
     margin-right: 6px;
+  }
+  .mapbox {
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  .biz-page-subheader .mapbox-container {
+      width: 33.33333%;
+  }
+  .biz-page-subheader .mapbox-container, .biz-page-subheader .showcase-container {
+    display: table-cell;
+    /*vertical-align: middle;*/
+  }
+  .showcase-container {
+    vertical-align: middle;
+  }
+  .biz-hours {
+    width: 50%;
+    padding-left: 24px;
+    /*background-color: white;*/
+    float: left;
   }
   .mapbox-text ul {
     margin: 5px;
@@ -187,6 +219,7 @@
       right: -9999px;
       bottom: 0;
       left: -9999px;
+      background-position: center;
   }
   .top-shelf-grey {
     background-color: #f5f5f5;
@@ -196,9 +229,11 @@
     margin-top: -3px;
   }
   .ywidget {
-    /*float: right;*/
-    margin-top: -3px;
-    margin-bottom: 24px;
+    padding-left: 24px;
+    float: left;
+    /*background-color: white;*/
+    /*margin-top: -3px;
+    margin-bottom: 24px;*/
   }
   .biz-details h3 {
     margin-bottom: 12px;
@@ -209,7 +244,7 @@
     overflow-wrap: break-word !important;
     font-weight: bold;
     margin-bottom: 6px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.3125em;
     color: #d32323;
     margin: 0 0 6px;
@@ -276,6 +311,27 @@
   .short-def-list dd {
     font-weight: bold;
   }
+  .mapbox-map {
+    overflow: hidden;
+    height: 135px;
+    border: 1px solid #ccc;
+    background-color: antiquewhite;
+  }
+  .probability {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: oblique;
+    color: #d32323
+  }
+  .percentage {
+    position: relative;
+    top: -25px;
+    left: 30px;
+    vertical-align: top;
+    font-size: 100px;
+    font-weight: bold;
+    font-style: oblique;
+  }
     </style>
 </head>
 
@@ -286,7 +342,7 @@
       </span>
    </nav> -->
   <nav class="navbar navbar-expand-lg justify-content-between" style="background-color: #d32323;">
-      <a class="navbar-brand">Kitchen Nightmare</a>
+      <a class="navbar-brand">Kitchen Nightmare with Data Science</a>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -299,7 +355,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
 
-  <div class="main-content-wrap main-content-wrap--full">
+  <div class="main-content-wrap main-content-wrap--full top-shelf-grey">
     <div class="top-shelf">
       <div class="content-container js-biz-details">
         <div class="biz-page-header">
@@ -374,130 +430,13 @@
           <div class="mapbox-container">
             <div class="mapbox" data-lightbox-page-title="Directions - Girl &amp; the Goat - West Loop - Chicago, IL" data-component-bound="true">
                 <div class="mapbox-map">
-                  <a href="/map/girl-and-the-goat-chicago" class="biz-map-directions" data-component-bound="true">
+                  <div class="probability">Chance of closing:</div>
+                  <div class="percentage">90%</div>
+                  <!-- <a href="/map/girl-and-the-goat-chicago" class="biz-map-directions" data-component-bound="true">
                     <img alt="Map" height="135" src="https://maps.googleapis.com/maps/api/staticmap?scale=2&amp;center=41.884105%2C-87.647944&amp;language=None&amp;zoom=15&amp;markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C41.884105%2C-87.647944&amp;client=gme-yelp&amp;sensor=false&amp;size=286x135&amp;signature=u0ktHJlugL-C7twvtPtba01YQ-I=" width="286">
-                  </a>
+                  </a> -->
                   <div class="lightbox-map hidden" data-map-state="{&quot;overlay_width&quot;: 335, &quot;fit_to_geobox&quot;: false, &quot;should_draw_checkbox&quot;: false, &quot;max_zoomlevel&quot;: null, &quot;service_areas&quot;: [], &quot;library&quot;: &quot;google&quot;, &quot;zoom_control_position&quot;: &quot;top_right&quot;, &quot;market&quot;: null, &quot;mo_map_possible&quot;: true, &quot;center&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;min_zoomlevel&quot;: null, &quot;zoom&quot;: 15, &quot;markers&quot;: {&quot;directions_marker&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;directions_marker&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/79f63ebc20db/ico/yelp_map/directions@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;directions&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7249ab345ac8/ico/yelp_map/directions_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;starred_business&quot;: {&quot;url&quot;: &quot;/biz/girl-and-the-goat-chicago&quot;, &quot;location&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;key&quot;: &quot;starred_business&quot;, &quot;hovercard_id&quot;: &quot;EYT-2CXi0KmIrrblrhvfRw&quot;, &quot;resource_type&quot;: &quot;business&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7ffd8e34c576/ico/yelp_map/annotation_star@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;starred&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/63e0e17c0579/ico/yelp_map/annotation_star_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;current_location&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;current_location&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;scaled_size&quot;: [46, 46], &quot;anchor_offset&quot;: [23, 23], &quot;name&quot;: &quot;current_location&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [46, 46]}}}, &quot;top_biz_bounds&quot;: null, &quot;ad_pin_color&quot;: null, &quot;hoods&quot;: [], &quot;scrollwheel_zoom&quot;: false}" data-business-id="qjnpkS8yZO8xcyEIy5OU9A" data-location-dropper-uri="/locations">
                     <div class="map-wrapper">
-                      <!-- <div class="side-box">
-                        <div class="transit-info-box island">
-                                <h3>Transit information</h3>
-                                <a class="expander" href="javascript:;">show less</a>
-                                <div class="contentbox">
-                                  <span class="transit-stop">
-                                    <b class="transit-line inline-block no-text" style="background-color: #009B3A; color: #FFFFFF;">
-                                          Green
-                                    </b>
-                                    <b class="transit-line inline-block no-text" style="background-color: #E27EA6; color: #FFFFFF;">
-                                          Pink
-                                    </b>
-                                    <strong>Clinton-Green</strong>
-                                    <span class="transit-walking-details subtle-text nowrap">
-                                          0.34 mi
-                                    </span>
-                                  </span>
-                                  <span class="transit-stop">
-                                      <b class="transit-line inline-block no-text" style="background-color: #00A1DE; color: #FFFFFF;">
-                                          Blue
-                                      </b>
-                                      <strong>Grand-Blue</strong>
-                                      <span class="transit-walking-details subtle-text nowrap">
-                                          0.49 mi
-                                      </span>
-                                  </span>
-                                </div>
-                        </div>
-                        <div class="get-directions-box island">
-                          <div class="get-directions-content">
-                            <h3>Get directions</h3>
-                            <div class="contentbox">
-                              <form action="/map/girl-and-the-goat-chicago" method="GET" class="clearfix yform">
-                                <div class="section-header u-space-preventcollapse-block">
-                                  <div class="tab-nav-container">
-                                    <ul class="tab-nav js-tab-nav tab-nav--full js-tab-nav--full">
-                                        <li class="tab-nav_item">
-                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav is-selected" data-tab-id="driving" href="javascript:;">
-                                            <span aria-label="Driving" style="width: 24px; height: 24px;" class="icon icon--24-car icon--size-24 icon--currentColor is-active tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                              <svg class="icon_svg">
-                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_car"></use>
-                                              </svg>
-                                            </span>
-                                          </a>
-                                        </li>
-                                        <li class="tab-nav_item">
-                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="transit" href="javascript:;">
-                                              <span aria-label="Public Transit" style="width: 24px; height: 24px;" class="icon icon--24-transit icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                                  <svg class="icon_svg">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_transit"></use>
-                                                  </svg>
-                                              </span>
-                                          </a>
-                                        </li>
-                                        <li class="tab-nav_item">
-                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="walking" href="javascript:;">
-                                            <span aria-label="Walking" style="width: 24px; height: 24px;" class="icon icon--24-walk icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                              <svg class="icon_svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_walk"></use>
-                                              </svg>
-                                            </span>
-                                          </a>
-                                        </li>
-                                        <li class="tab-nav_item tab-nav_item--last">
-                                          <a class="tab-link js-tab-link tab-link--nav js-tab-link--nav" data-tab-id="cycling" href="javascript:;">
-                                            <span aria-label="Cycling" style="width: 24px; height: 24px;" class="icon icon--24-bicycle icon--size-24 icon--currentColor tab-link_icon js-tab-link_icon tab-link_icon-wrap">
-                                              <svg class="icon_svg">
-                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_bicycle"></use>
-                                              </svg>
-                                            </span>
-                                          </a>
-
-                                        </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="js-starting-point u-space-b2">
-                                  <a class="swapper pull-right read-more" href="javascript:;">Swap start/end points</a>
-                                  <label>Start from</label>
-                                  <div class="location">
-                                      <div class="user-location nested-icon-label">
-                                          <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 icon--linked i">
-                                            <svg class="icon_svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
-                                            </svg>
-                                          </span>
-                                          <input autocomplete="off" id="js-dropper-text" name="location" type="text">
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="js-ending-point u-space-b2">
-                                  <strong class="hidden">Start from</strong>
-                                  <a class="swapper pull-right read-more hidden" href="javascript:;">Swap start/end points</a>
-                                  <div class="location">
-                                      <div class="business-location media-block">
-                                          <div class="media-avatar">
-                                              <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-marker icon--size-18 icon--error">
-                                                <svg class="icon_svg">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_marker"></use>
-                                                </svg>
-                                              </span>
-                                          </div>
-                                          <div class="media-story">
-                                            <div class="media-title">
-                                                <a class="biz-name js-analytics-click" data-analytics-label="biz-name" href="/biz/girl-and-the-goat-chicago" data-hovercard-id="EYT-2CXi0KmIrrblrhvfRw"><span>Girl &amp; the Goat</span></a>
-                                            </div>
-                                            <address>809 W Randolph St, Chicago, IL 60607</address>
-                                          </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <button type="submit" value="submit" class="ybtn ybtn--primary ybtn--small get-directions-button"><span>Get directions</span></button>
-                              </form>
-                              <h3 class="result-header hidden"></h3>
-                              <div class="textual-results"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> -->
                       <div class="yelp-map-container directions-map">
                         <div class="engine-container"></div>
                       </div>
@@ -531,9 +470,9 @@
                                 <span class="neighborhood-str-list">West Loop, Near West Side</span>
                           </div>
                       </li>
-                      <li>identifier: {{ restaurant.identifier }}</li>
-                      <li>first review date: {{ restaurant.first_review_date }}</li>
-                      <li>last review date: {{ restaurant.last_review_date }}</li>
+                      <li>id: {{ restaurant.identifier }}</li>
+                      <li>first review: {{ restaurant.first_review_date }}</li>
+                      <li>last review: {{ restaurant.last_review_date }}</li>
                       <li>permanently closed: {{ restaurant.permanently_closed }}</li>
 
                       <!-- <li class="clearfix">
