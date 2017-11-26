@@ -3,6 +3,74 @@
   <title>Home</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <style type="text/css">
+  a {
+    color: #0073bb;
+    text-decoration: none;
+  }
+  h1 {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: bold;
+    /*margin-bottom: 6px;
+    font-size: 30px;
+    line-height: 1.2em;*/
+    color: #333;
+    /*padding-top: 6px;*/
+  }
+  h3 {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 1.3125em;
+    color: #d32323;
+    margin: 0 0 6px;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  a, div, dd, dl, dt, li, ul{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  b, strong, h5 {
+    font-weight: bold;
+  }
+  address {
+    display: block;
+    font-style: normal;
+    margin-bottom: 0;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  tbody {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  th {
+    margin: 0;
+    font-size: 100%;
+    font: inherit;
+  }
   .main-content-wrap--full {
     background: white;
   }
@@ -75,17 +143,6 @@
   .embossed-text-white {
     text-shadow: 0 1px rgba(255,255,255,0.7);
   }
-  h1 {
-    word-wrap: break-word !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    font-weight: bold;
-    /*margin-bottom: 6px;
-    font-size: 30px;
-    line-height: 1.2em;*/
-    color: #333;
-    /*padding-top: 6px;*/
-  }
   .claim-status_teaser {
     font-size: 14px;
     display: inline-block;
@@ -124,11 +181,65 @@
     /* text-shadow: 0 0 black; */
     /* background-color: rgba(0,0,0,0.7); */
   }
+  .i-stars--large-5 {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -216px;
+  }
   .i-stars--large-4-half {
     background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
     width: 132px;
     height: 24px;
     background-position: 0 -192px;
+  }
+  .i-stars--large-4 {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -168px;
+  }
+  .i-stars--large-3-half {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -144px;
+  }
+  .i-stars--large-3 {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -120px;
+  }
+  .i-stars--large-2-half {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -96px;
+  }
+  .i-stars--large-2 {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -72px;
+  }
+  .i-stars--large-1-half {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -48px;
+  }
+  .i-stars--large-1 {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -24px;
+  }
+  .i-stars--large-0 {
+    background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+    width: 132px;
+    height: 24px;
+    background-position: 0 -0px;
   }
   .i-stars {
     /*background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;*/
@@ -163,6 +274,9 @@
     background: #fff;
     border: 1px solid #ccc;
   }
+  /*.mapbox-text li {
+    margin-bottom: 3px;
+  }*/
   .biz-page-subheader .mapbox-container {
       width: 33.33333%;
   }
@@ -182,30 +296,12 @@
   .mapbox-text ul {
     margin: 5px;
   }
-  ol, ul {
-    list-style: none;
-  }
-  div, dd, dl, dt, li, ul{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
   .map-box-address {
     line-height: 18px;
+    margin-bottom: 8px;
   }
   .u-space-l4 {
     margin-left: 24px !important;
-  }
-  b, strong, h5 {
-    font-weight: bold;
-  }
-  address {
-    display: block;
-    font-style: normal;
-    margin-bottom: 0;
   }
   /*.biz-page-subheader .showcase-container_inner {
       position: relative;
@@ -238,40 +334,11 @@
   .biz-details h3 {
     margin-bottom: 12px;
   }
-  h3 {
-    word-wrap: break-word !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    font-weight: bold;
-    margin-bottom: 6px;
-    font-size: 18px;
-    line-height: 1.3125em;
-    color: #d32323;
-    margin: 0 0 6px;
-  }
   .sidebar .biz-hours .hours-table {
     margin-bottom: 6px;
   }
   .table-simple {
     width: auto;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
-  tbody {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
   }
   .table tbody:first-child tr:first-child th {
     border-top: 0;
@@ -290,11 +357,6 @@
   }
   .table th, .table td {
     text-align: left;
-  }
-  th {
-    margin: 0;
-    font-size: 100%;
-    font: inherit;
   }
   .ylist>li {
     margin-bottom: 12px;
@@ -364,6 +426,7 @@
               <h1 class="biz-page-title embossed-text-white shortenough">
                   {{ restaurant.name }}
               </h1>
+              {% if restaurant.claimed == 1 %}
               <div class="u-nowrap claim-status_teaser js-claim-status-hover">
                 <!-- <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-checkmark-badged icon--size-18 icon--blue-dark claim-status_icon u-space-r1 claim-status_icon--claimed">
                   <svg class="icon_svg">
@@ -372,6 +435,7 @@
                 </span> -->
                 Claimed
               </div>
+              {% endif %}
               <div class="u-hidden js-claim-status-hover-content">
                 <p class="u-space-b0">
                   This business has been claimed by the owner or a representative.
@@ -382,11 +446,12 @@
           <div class="biz-main-info embossed-text-white">
               <div class="rating-info clearfix">
                   <div class="biz-rating biz-rating-very-large clearfix">
-                      <div class="i-stars i-stars--large-4-half rating-very-large" title="4.5 star rating">
+                      <!-- <div class="i-stars i-stars--large-4-half rating-very-large" title="4.5 star rating"> -->
+                      <div class="i-stars i-stars--large-{{restaurant.ratings_notation}} rating-very-large">
                         <img class="offscreen" height="303" src="https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png" width="84" alt="4.5 star rating">
                       </div>
                       <span class="review-count rating-qualifier">
-                          6620 reviews
+                          {{restaurant.review}} reviews
                       </span>
                   </div>
                   <!-- <div class="rating-details">
@@ -405,11 +470,13 @@
               </div>
               <div class="price-category">
                   <span class="bullet-after">
-                      <span class="business-attribute price-range">$$$</span>
+                      <span class="business-attribute price-range">{{restaurant.dollar_signs}}</span>
                   </span>
-                  <span class="category-str-list">
-                      <a href="/c/chicago/newamerican">American (New)</a>
-                  </span>
+                  {% if restaurant.category != 'N/A' %}
+                    <span class="category-str-list">
+                        <a href=""> {{restaurant.category}}</a>
+                    </span>
+                  {% endif %}
               </div>
           </div>
           <script>
@@ -430,11 +497,15 @@
           <div class="mapbox-container">
             <div class="mapbox" data-lightbox-page-title="Directions - Girl &amp; the Goat - West Loop - Chicago, IL" data-component-bound="true">
                 <div class="mapbox-map">
-                  <div class="probability">Chance of closing:</div>
-                  <div class="percentage">90%</div>
+                  {% if restaurant.permanently_closed == 0 %}
+                    <div class="probability">Chance of closing:</div>
+                    <div class="percentage">{{restaurant.prediction}} %</div>
+                  {% else %}
+                    <img alt="Closed" height="133" src="http://www.iphd.ru/we-are-closed.jpg" width="297">
                   <!-- <a href="/map/girl-and-the-goat-chicago" class="biz-map-directions" data-component-bound="true">
                     <img alt="Map" height="135" src="https://maps.googleapis.com/maps/api/staticmap?scale=2&amp;center=41.884105%2C-87.647944&amp;language=None&amp;zoom=15&amp;markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C41.884105%2C-87.647944&amp;client=gme-yelp&amp;sensor=false&amp;size=286x135&amp;signature=u0ktHJlugL-C7twvtPtba01YQ-I=" width="286">
                   </a> -->
+                  {% endif %}
                   <div class="lightbox-map hidden" data-map-state="{&quot;overlay_width&quot;: 335, &quot;fit_to_geobox&quot;: false, &quot;should_draw_checkbox&quot;: false, &quot;max_zoomlevel&quot;: null, &quot;service_areas&quot;: [], &quot;library&quot;: &quot;google&quot;, &quot;zoom_control_position&quot;: &quot;top_right&quot;, &quot;market&quot;: null, &quot;mo_map_possible&quot;: true, &quot;center&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;min_zoomlevel&quot;: null, &quot;zoom&quot;: 15, &quot;markers&quot;: {&quot;directions_marker&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;directions_marker&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/79f63ebc20db/ico/yelp_map/directions@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;directions&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7249ab345ac8/ico/yelp_map/directions_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;starred_business&quot;: {&quot;url&quot;: &quot;/biz/girl-and-the-goat-chicago&quot;, &quot;location&quot;: {&quot;latitude&quot;: 41.8841049992939, &quot;longitude&quot;: -87.6479440725005}, &quot;key&quot;: &quot;starred_business&quot;, &quot;hovercard_id&quot;: &quot;EYT-2CXi0KmIrrblrhvfRw&quot;, &quot;resource_type&quot;: &quot;business&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/7ffd8e34c576/ico/yelp_map/annotation_star@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;anchor_offset&quot;: [12, 32], &quot;name&quot;: &quot;starred&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media2.fl.yelpcdn.com/assets/2/www/img/63e0e17c0579/ico/yelp_map/annotation_star_highlighted@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;current_location&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;current_location&quot;, &quot;icon&quot;: {&quot;regular_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;scaled_size&quot;: [46, 46], &quot;anchor_offset&quot;: [23, 23], &quot;name&quot;: &quot;current_location&quot;, &quot;active_origin&quot;: [0, 0], &quot;active_uri&quot;: &quot;https://s3-media3.fl.yelpcdn.com/assets/2/www/img/56b9eee3f027/ico/yelp_map/current_location_dot@2x.png&quot;, &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [46, 46]}}}, &quot;top_biz_bounds&quot;: null, &quot;ad_pin_color&quot;: null, &quot;hoods&quot;: [], &quot;scrollwheel_zoom&quot;: false}" data-business-id="qjnpkS8yZO8xcyEIy5OU9A" data-location-dropper-uri="/locations">
                     <div class="map-wrapper">
                       <div class="yelp-map-container directions-map">
@@ -461,19 +532,24 @@
                           </a>
                           <div class="map-box-address u-space-l4">
                             <strong class="street-address">
-                                <address>809 W Randolph St<br>Chicago, IL 60607</address>
+                                <address> {{restaurant.address1}} <br> {{restaurant.address2}}</address>
                             </strong>
+                            {% if restaurant.between != '' %}
                             <span class="cross-streets">
-                                b/t Green St &amp; Halsted St
+                                {{restaurant.between}}
                             </span>
-                              <br>
-                                <span class="neighborhood-str-list">West Loop, Near West Side</span>
+                            <br>
+                            {% endif%}                      
+                                <span class="neighborhood-str-list">{{restaurant.neighborhood}}</span>
                           </div>
                       </li>
-                      <li>id: {{ restaurant.identifier }}</li>
+                      <li>{{ restaurant.phone }}</li>
+                      <a href="http://www.{{ restaurant.website }}" target="_blank" rel="noopener">{{ restaurant.website }}</a>
+                      <!-- <li>{{ restaurant.website }}</li> -->
+                      <!-- <li>yelp id: {{ restaurant.yelp_id }}</li>
                       <li>first review: {{ restaurant.first_review_date }}</li>
                       <li>last review: {{ restaurant.last_review_date }}</li>
-                      <li>permanently closed: {{ restaurant.permanently_closed }}</li>
+                      <li>permanently closed: {{ restaurant.permanently_closed }}</li> -->
 
                       <!-- <li class="clearfix">
                         <div>
@@ -563,7 +639,12 @@
                     <tr>
                       <th scope="row">Mon</th>
                         <td>
-                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                            <span class="nowrap">{{restaurant.mon}}</span>
+                            {% if restaurant.mon1 != 'N/A' %}
+                              <br>
+                              <span class="nowrap">{{restaurant.mon1}}</span>
+                            {% endif %}
+                            <!-- <span class="nowrap">11:00 pm</span> -->
                         </td>
                         <td class="extra">
                         </td>
@@ -571,7 +652,11 @@
                     <tr>
                       <th scope="row">Tue</th>
                         <td>
-                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                            <span class="nowrap">{{restaurant.tue}}</span>
+                            {% if restaurant.tue1 != 'N/A' %}
+                              <br>
+                              <span class="nowrap">{{restaurant.tue1}}</span>
+                            {% endif %}
                         </td>
                         <td class="extra">
                         </td>
@@ -579,7 +664,11 @@
                     <tr>
                       <th scope="row">Wed</th>
                         <td>
-                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                          <span class="nowrap">{{restaurant.wed}}</span>
+                          {% if restaurant.wed1 != 'N/A' %}
+                            <br>
+                            <span class="nowrap">{{restaurant.wed1}}</span>
+                          {% endif %}
                         </td>
                         <td class="extra">
                                 <!-- <span class="nowrap closed">Closed now</span> -->
@@ -588,7 +677,11 @@
                     <tr>
                       <th scope="row">Thu</th>
                         <td>
-                            <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                          <span class="nowrap">{{restaurant.thu}}</span>
+                          {% if restaurant.thu1 != 'N/A' %}
+                            <br>
+                            <span class="nowrap">{{restaurant.thu1}}</span>
+                          {% endif %}
                         </td>
                         <td class="extra">
                         </td>
@@ -596,7 +689,11 @@
                     <tr>
                       <th scope="row">Fri</th>
                       <td>
-                          <span class="nowrap">4:30 pm</span> - <span class="nowrap">12:00 am</span>
+                        <span class="nowrap">{{restaurant.fri}}</span>
+                        {% if restaurant.fri1 != 'N/A' %}
+                          <br>
+                          <span class="nowrap">{{restaurant.fri1}}</span>
+                        {% endif %}
                       </td>
                       <td class="extra">
                       </td>
@@ -604,7 +701,11 @@
                     <tr>
                       <th scope="row">Sat</th>
                       <td>
-                          <span class="nowrap">4:30 pm</span> - <span class="nowrap">12:00 am</span>
+                        <span class="nowrap">{{restaurant.sat}}</span>
+                        {% if restaurant.sat1 != 'N/A' %}
+                          <br>
+                          <span class="nowrap">{{restaurant.sat1}}</span>
+                        {% endif %}
                       </td>
                       <td class="extra">
                       </td>
@@ -612,7 +713,11 @@
                     <tr>
                       <th scope="row">Sun</th>
                       <td>
-                          <span class="nowrap">4:30 pm</span> - <span class="nowrap">11:00 pm</span>
+                        <span class="nowrap">{{restaurant.sun}}</span>
+                        {% if restaurant.sun1 != 'N/A' %}
+                          <br>
+                          <span class="nowrap">{{restaurant.sun1}}</span>
+                        {% endif %}
                       </td>
                       <td class="extra">
                       </td>
@@ -632,7 +737,7 @@
                                                   Takes Reservations
                                           </dt>
                                           <dd>
-                                              Yes
+                                              {{restaurant.takes_reservations}}
                                           </dd>
                                       </dl>
 
@@ -641,7 +746,7 @@
                                                   Delivery
                                           </dt>
                                           <dd>
-                                              No
+                                              {{restaurant.delivery}}
                                           </dd>
                                       </dl>
 
@@ -650,7 +755,7 @@
                                                   Take-out
                                           </dt>
                                           <dd>
-                                              No
+                                              {{restaurant.take_out}}
                                           </dd>
                                       </dl>
 
@@ -659,70 +764,70 @@
                                                   Accepts Credit Cards
                                           </dt>
                                           <dd>
-                                              Yes
+                                              {{restaurant.accepts_credit_cards}}
                                           </dd>
                                       </dl>
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Accepts Apple Pay
                                           </dt>
                                           <dd>
                                               No
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Accepts Android Pay
                                           </dt>
                                           <dd>
                                               No
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Good For
                                           </dt>
                                           <dd>
                                               Dinner
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
                                       <dl>
                                           <dt class="attribute-key">
                                                   Parking
                                           </dt>
                                           <dd>
-                                              Valet
+                                              {{restaurant.parking}}
                                           </dd>
                                       </dl>
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Bike Parking
                                           </dt>
                                           <dd>
                                               Yes
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Wheelchair Accessible
                                           </dt>
                                           <dd>
                                               Yes
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
                                       <dl>
                                           <dt class="attribute-key">
                                                   Good for Kids
                                           </dt>
                                           <dd>
-                                              No
+                                              {{restaurant.good_for_kids}}
                                           </dd>
                                       </dl>
 
@@ -731,7 +836,7 @@
                                                   Good for Groups
                                           </dt>
                                           <dd>
-                                              Yes
+                                              {{restaurant.good_for_groups}}
                                           </dd>
                                       </dl>
 
@@ -740,25 +845,25 @@
                                                   Attire
                                           </dt>
                                           <dd>
-                                              Casual
+                                              {{restaurant.attire}}
                                           </dd>
                                       </dl>
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Ambience
                                           </dt>
                                           <dd>
                                               Trendy
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
                                       <dl>
                                           <dt class="attribute-key">
                                                   Noise Level
                                           </dt>
                                           <dd>
-                                              Loud
+                                              {{restaurant.noise_level}}
                                           </dd>
                                       </dl>
 
@@ -767,7 +872,7 @@
                                                   Alcohol
                                           </dt>
                                           <dd>
-                                              Full Bar
+                                              {{restaurant.alcohol}}
                                           </dd>
                                       </dl>
 
@@ -776,7 +881,7 @@
                                                   Outdoor Seating
                                           </dt>
                                           <dd>
-                                              Yes
+                                              {{restaurant.outdoor_seating}}
                                           </dd>
                                       </dl>
 
@@ -785,7 +890,7 @@
                                                   Wi-Fi
                                           </dt>
                                           <dd>
-                                              No
+                                              {{restaurant.wifi}}
                                           </dd>
                                       </dl>
 
@@ -794,36 +899,36 @@
                                                   Has TV
                                           </dt>
                                           <dd>
-                                              No
+                                              {{restaurant.hastv}}
                                           </dd>
                                       </dl>
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Waiter Service
                                           </dt>
                                           <dd>
                                               Yes
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Caters
                                           </dt>
                                           <dd>
                                               No
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
-                                      <dl>
+                                      <!-- <dl>
                                           <dt class="attribute-key">
                                                   Gender Neutral Restrooms
                                           </dt>
                                           <dd>
                                               Yes
                                           </dd>
-                                      </dl>
+                                      </dl> -->
 
                           </div>
                       </li>
