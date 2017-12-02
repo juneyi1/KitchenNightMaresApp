@@ -1,3 +1,4 @@
+{% load static %}
 <html>
   <head>
     <title> KNDS</title>
@@ -6,9 +7,293 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <style type="text/css">
+      .homepage-hero {
+        padding-top: 30px;
+        height: 570px;
+        background-color: #333;
+        background-size: cover;
+        background-position: 50%;
+      }
+      .y-container {
+        /*background-color: #fff;*/
+        min-width: 1020px;
+      }
     </style>
   </head>
   <body>
+    <!-- <div class="y-container homepage-hero" style="background-image: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_large_assets/eea3522f4348/assets/img/home/hero_photos/BWRT755ImlKnGpjV4udRdQ.jpg)"> -->
+  <!-- <div class="y-container homepage-hero" style="background-image: url(https://a248.e.akamai.net/ib.huluim.com/show_key_art/57?size=1600x600&region=US)"> -->
+  <!-- <div class="y-container homepage-hero" style="background-image: url('bg.jpeg')"> -->
+  <div class="y-container homepage-hero" style="background-image: url({% static 'bg.jpeg' %})">
+        <div class="y-container_content">
+          <!-- <ul class="offscreen">
+              <li>
+                    <a href="#header_find_form" rel="nofollow">
+                        Skip to Search Form
+                    </a>
+                    <a href="ubqsrfzraeyvtbw.html" style="display: none;" rel="file" id="zquxftcydwyzfcteffq">wvsauxqaqdqvx</a>
+                </li>
+              <li>
+                    <a href="#header-nav" rel="nofollow">
+                        Skip to Navigation
+                    </a>
+                </li>
+              <li>
+                    <a href="#page-content" rel="nofollow">
+                        Skip to Page Content
+                    </a>
+                </li>
+          </ul> -->
+          <div class="hero-header js-main-header">
+            <div class="arrange arrange--18">
+              <div class="arrange_unit arrange_unit--fill">
+                <div class="hero-header_nav hero-header_nav--main nowrap">
+                  <ul class="header-nav" id="header-nav">
+                    <li id="write-review" class="header-nav_item js-analytics-click" data-analytics-label="write-review">
+                        <a class="header-nav_link" href="/writeareview">
+                            Write a Review
+                        </a>
+                    </li>
+                    <li id="events" class="header-nav_item js-analytics-click" data-analytics-label="events">
+                        <a class="header-nav_link" href="/events">
+                                Events
+                        </a>
+                    </li>
+                    <li id="talk" class="header-nav_item js-analytics-click" data-analytics-label="talk">
+                            <a class="header-nav_link" href="/talk">
+                                Talk
+                            </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="arrange_unit nowrap">
+                <ul class="header-nav hero-header_nav main-header_account">
+                  <li class="header-nav_item u-space-r2" id="header-log-in">
+                    <a class="header-nav_link header-nav_link--log-in js-analytics-click" href="/login" data-analytics-label="login">
+                        Log In
+                    </a>
+                  </li>
+                  <li class="header-nav_item u-space-r0 js-analytics-click" id="header-sign-up" data-analytics-label="signup">
+                <a href="/signup" class="ybtn ybtn--primary header-nav_button nowrap">Sign Up</a>
+            </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="homepage-hero_inner">
+            <div class="u-text-centered">
+                <h1 class="homepage-hero_logo" id="logo">
+                    <a href="/">Yelp</a>
+                </h1>
+            </div>
+            <form method="get" action="/search" id="header_find_form" class="business-search-form main-search yform u-space-b0 js-business-search-form" role="search" data-component-bound="true">
+              <div class="arrange arrange--equal arrange--stack-small">
+                <div class="arrange_unit">
+                  <div class="main-search_suggestions-field search-field-container find-decorator">
+                    <label class="pseudo-input business-search-form_input business-search-form_input--find" data-component-bound="true">
+                        <div class="pseudo-input_wrapper">
+                            <span class="pseudo-input_text business-search-form_input-text">Find</span>
+                            <span class="pseudo-input_field-holder" data-component-bound="true" style="position: relative; display: block;">
+                                <input disabled="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; color: rgb(200, 200, 200); -webkit-text-fill-color: rgb(200, 200, 200); width: 100%; box-sizing: border-box; top: 0px; right: 0px; bottom: 0px; left: 0px; display: inline-block; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; line-height: 23.22px; font-weight: 400; letter-spacing: 0px; background-color: rgba(0, 0, 0, 0); font-kerning: auto; vertical-align: baseline; padding: 0px; border-width: 0px;"><input autocomplete="off" id="find_desc" maxlength="64" placeholder="burgers, barbers, spas, handymen…" value="" class="pseudo-input_field business-search-form_input-field" aria-autocomplete="list" tabindex="1" data-component-bound="true" style="display: inline-block; background: transparent; position: relative; width: 100%; box-sizing: border-box;"><input type="hidden" maxlength="64" data-component-bound="true" name="find_desc" value="">
+                            </span>
+                        </div>
+                    </label>
+                    <div class="main-search_suggestions suggestions-list-container search-suggestions-list-container hidden" data-component-bound="true">
+                        <ul class="suggestions-list" role="listbox" aria-label="Search results"></ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="arrange_unit">
+                <div class="arrange">
+                    <div class="arrange_unit arrange_unit--fill">
+                        <div class="main-search_suggestions-field search-field-container near-decorator">
+                            <label class="pseudo-input business-search-form_input business-search-form_input--near">
+                                <div class="pseudo-input_wrapper">
+                                <span class="pseudo-input_text business-search-form_input-text">Near</span>
+                                    <span class="pseudo-input_field-holder">
+                                        <input autocomplete="off" id="dropperText_Mast" maxlength="80" placeholder="address, neighborhood, city, state or zip" value="Arlington Heights, IL" class="pseudo-input_field business-search-form_input-field" aria-autocomplete="list" tabindex="2" data-component-bound="true"><input type="hidden" maxlength="80" data-component-bound="true" name="find_loc" value="Arlington Heights, IL">
+                                        <input type="hidden" name="ns" value="1">
+                                    </span>
+                                </div>
+                            </label>
+                            <div class="main-search_suggestions suggestions-list-container location-suggestions-list-container hidden" data-component-bound="true">
+                                <ul class="suggestions-list" role="listbox" aria-label="Search results"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrange_unit">
+                      <button class="ybtn ybtn--primary ybtn--small business-search-form_button" id="header-search-submit" tabindex="3" title="Search" type="submit" value="submit">
+                            <span class="main-search_action-icon-wrap js-search-icon-wrap">
+                                <span aria-hidden="true" style="width: 24px; height: 24px;" class="icon icon--24-search icon--size-24 icon--currentColor">
+                                  <svg class="icon_svg">
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#24x24_search"></use>
+                                  </svg>
+                                </span>
+                                <span class="u-offscreen">Search</span>
+                            </span>
+                                <div class="circle-spinner js-circle-spinner hidden">
+                                  <div class="circle-spinner_segment container1">
+                                      <div class="circle1"></div>
+                                      <div class="circle2"></div>
+                                      <div class="circle3"></div>
+                                      <div class="circle4"></div>
+                                  </div>
+                                  <div class="circle-spinner_segment container2">
+                                      <div class="circle1"></div>
+                                      <div class="circle2"></div>
+                                      <div class="circle3"></div>
+                                      <div class="circle4"></div>
+                                  </div>
+                                  <div class="circle-spinner_segment container3">
+                                      <div class="circle1"></div>
+                                      <div class="circle2"></div>
+                                      <div class="circle3"></div>
+                                      <div class="circle4"></div>
+                                  </div>
+                                </div>
+                      </button>
+                    </div>
+                </div>
+            </div>
+              </div>
+            </form>
+
+            <ul class="homepage-hero_categories js-header-nav text-centered">
+              <li class="homepage-hero_category js-analytics-click" data-analytics-label="restaurants">
+                <div>
+                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-food icon--size-18 icon--inverse icon--fallback-inverted">
+                      <svg class="icon_svg">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_food"></use>
+                      </svg>
+                    </span>
+                        <a class="homepage-hero_link" href="/search?cflt=restaurants&amp;find_loc=Arlington+Heights%2C+IL">Restaurants</a>
+                </div>
+              </li>
+              <li class="homepage-hero_category js-analytics-click" data-analytics-label="nightlife">
+                <div>
+                  <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-nightlife icon--size-18 icon--inverse icon--fallback-inverted">
+                    <svg class="icon_svg">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_nightlife"></use>
+                    </svg>
+                  </span>
+                        <a class="homepage-hero_link" href="/search?cflt=nightlife&amp;find_loc=Arlington+Heights%2C+IL">Nightlife</a>
+                </div>
+              </li>
+              <li class="homepage-hero_category js-analytics-click dropdown js-category-dropdown dropdown--arrow dropdown--fade fade-initial-load" data-analytics-label="home services">
+                <div class="js-dropdown-toggle dropdown_toggle">
+                  <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-tools icon--size-18 icon--inverse icon--fallback-inverted">
+                    <svg class="icon_svg">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_tools"></use>
+                    </svg>
+                  </span>
+                        <a class="homepage-hero_link">Home Services</a>
+                        <span aria-hidden="true" style="width: 14px; height: 14px;" class="icon icon--14-triangle-down icon--size-14 icon--inverse icon--fallback-inverted u-triangle-direction-down dropdown_arrow">
+                          <svg class="icon_svg">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#14x14_triangle_down"></use>
+                          </svg>
+                        </span>
+                </div>
+                <div class="dropdown_menu-container js-dropdown_menu-container">
+                  <div class="dropdown_menu js-dropdown-menu">
+                    <div class="dropdown_menu-inner">
+                      <ul class="dropdown_menu-group" role="menu" aria-hidden="false">
+                        <li class="dropdown_item js-analytics-click" data-analytics-label="air conditioning &amp; heating" role="presentation">
+                            <a class="dropdown_link js-dropdown-link" href="/search?cflt=hvac&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                              <span class="dropdown_label">
+                                      Air Conditioning &amp; Heating
+                              </span>
+                            </a>
+                        </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="contractors" role="presentation">
+                                <a class="dropdown_link js-dropdown-link" href="/search?cflt=contractors&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                  <span class="dropdown_label">
+                                          Contractors
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="electricians" role="presentation">
+                                <a class="dropdown_link js-dropdown-link" href="/search?cflt=electricians&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                  <span class="dropdown_label">
+                                          Electricians
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="home cleaners" role="presentation">
+                                <a class="dropdown_link js-dropdown-link" href="/search?cflt=homecleaning&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                  <span class="dropdown_label">
+                                          Home Cleaners
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="landscapers" role="presentation">
+                              <a class="dropdown_link js-dropdown-link" href="/search?cflt=landscaping&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                <span class="dropdown_label">
+                                        Landscapers
+                                </span>
+                              </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="locksmiths" role="presentation">
+                              <a class="dropdown_link js-dropdown-link" href="/search?cflt=locksmiths&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                <span class="dropdown_label">
+                                        Locksmiths
+                                </span>
+                              </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="movers" role="presentation">
+                              <a class="dropdown_link js-dropdown-link" href="/search?cflt=movers&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                <span class="dropdown_label">
+                                        Movers
+                                </span>
+                              </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="painters" role="presentation">
+                              <a class="dropdown_link js-dropdown-link" href="/search?cflt=painters&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                <span class="dropdown_label">
+                                        Painters
+                                </span>
+                              </a>
+                            </li>
+                            <li class="dropdown_item js-analytics-click" data-analytics-label="plumbers" role="presentation">
+                              <a class="dropdown_link js-dropdown-link" href="/search?cflt=plumbing&amp;find_loc=Arlington+Heights%2C+IL" role="menuitem">
+                                <span class="dropdown_label">
+                                        Plumbers
+                                </span>
+                              </a>
+                            </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="homepage-hero_category js-analytics-click" data-analytics-label="delivery">
+                <div>
+                    <span aria-hidden="true" style="width: 18px; height: 18px;" class="icon icon--18-order icon--size-18 icon--inverse icon--fallback-inverted">
+                      <svg class="icon_svg">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#18x18_order"></use>
+                      </svg>
+                    </span>
+                        <a class="homepage-hero_link" href="/search?find_desc=Delivery&amp;find_loc=Arlington+Heights%2C+IL">Delivery</a>
+                </div>
+              </li>
+            </ul>
+            <div class="u-text-centered homepage-hero_biz u-size-full">
+              <div class="business-link-hovercard js-business-link-hovercard business-link-hovercard--strong business-link-hovercard--inline">
+                <span class="business-link-hovercard_business-link js-business-link">
+                              <a class="biz-name js-analytics-click" data-analytics-label="biz-name" href="/biz/cheshire-preston" data-hovercard-id=""><span>Cheshire</span></a>
+                </span>
+              </div>
+            </div>
+            <div class="u-text-centered homepage-hero_photo-owner u-size-full">
+              <div data-hypernova-key="homepage__3f4bea6cffaa82ca173263605be596f18cdddf37__homepage__PhotoAuthorText__dynamic" data-hypernova-id="796aca94-e047-4d4c-badb-7a284dfcba9a"><p data-reactroot="" data-reactid="1" data-react-checksum="632175949">Photo by <a class="homepage-hero_photo-owner-link" href="/user_details?userid=RwthRRBnOLUoTPxfaQXn7A"><strong>Natalia K.</strong></a></p></div>
+                <script type="application/json" data-hypernova-key="homepage__3f4bea6cffaa82ca173263605be596f18cdddf37__homepage__PhotoAuthorText__dynamic" data-hypernova-id="796aca94-e047-4d4c-badb-7a284dfcba9a"><!--{"text":"Photo by <a class=\"homepage-hero_photo-owner-link\" href=\"/user_details?userid=RwthRRBnOLUoTPxfaQXn7A\"&gt;<strong&gt;Natalia K.</strong&gt;</a&gt;"}--></script>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
     <div class="dropdown">
       {% if restaurant_list %}
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
