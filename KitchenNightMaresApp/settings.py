@@ -25,7 +25,7 @@ SECRET_KEY = 'q)_(#(mg*8tqz_1yjon*8plt_+gb)v7y6!$)l+zraev*d7e9rf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kitchen-nightmare.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['kitchen-nightmare.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
