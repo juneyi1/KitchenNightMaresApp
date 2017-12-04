@@ -10,10 +10,10 @@
 
       .homepage-hero {
         padding-top: 30px;
-        height: 570px;
+        height: 500px;
         background-color: #333;
         background-size: cover;
-        background-position: 50%;
+        background-position: 0%;
       }
       .y-container {
         /*background-color: #fff;*/
@@ -25,6 +25,25 @@
           font-size: 25px;
           padding-top: 30px;
           padding-bottom: 30px;
+      }
+
+      .data_science {
+          position: relative;
+          top: 325px;
+          left: -400px;
+          text-align: center;
+          font-size: 50px;
+          color: #d32323;
+          font-weight: 900;
+      }
+
+      .btn-danger {
+          height: 38px;
+      }
+
+      .dropdown_position {
+          position: relative;
+          left: 265px;
       }
 
       #option_text {
@@ -41,7 +60,8 @@
   </head>
   <body>
 
-    <div class="y-container homepage-hero" style="background-image: url({% static 'bg.jpeg' %})">
+    <div class="y-container homepage-hero" style="background-image: url({% static 'background.jpeg' %})">
+      <p class="data_science"> WITH DATA SCIENCE</p>
     </div>
 
     <div class="description">
@@ -58,11 +78,10 @@
     </div>
 
     <div class="row">
-
       <div class="col-lg-6">
-          <div class="dropdown">
+          <div class="dropdown dropdown_position">
             {% if restaurant_list %}
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Restaurant Name
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -75,31 +94,57 @@
             {% endif %}
           </div>
       </div>
-
       <div class="col-lg-6">
-
         <form>
+          <div class="row">
             <div class="form-group">
-                <label for="neighborhood">Neighborhood</label>
-                <select class="form-control" id="neighborhood">
-                    {% for neighborhood in all_neighborhoods %}
-                        <option>{{ neighborhood }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="price_range">Price range</label>
+                <!-- <label for="price_range">Price range</label>
                 <select class="form-control" id="neighborhood">
                     {% for range in all_prices_ranges %}
                         <option>{{ range }}</option>
                     {% endfor %}
+                </select> -->
+                <select class="custom-select">
+                  <option selected>Price range</option>
+                  {% for range in all_prices_ranges %}
+                      <option>{{ range }}</option>
+                  {% endfor %}
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary"><a href="#">Submit</a></button>
+            <div class="form-group">
+                <!-- <label for="category">Category</label>
+                <select class="form-control" id="category">
+                    {% for category in all_categories %}
+                        <option>{{ category }}</option>
+                    {% endfor %}
+                </select> -->
+                <select class="custom-select">
+                  <option selected>Category</option>
+                  {% for category in all_categories %}
+                      <option>{{ category }}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <!-- <label for="neighborhood">Neighborhood</label>
+                <select class="form-control" id="neighborhood">
+                    {% for neighborhood in all_neighborhoods %}
+                        <option>{{ neighborhood }}</option>
+                    {% endfor %}
+                </select> -->
+                <select class="custom-select">
+                  <option selected>Neighborhood</option>
+                  {% for neighborhood in all_neighborhoods %}
+                      <option>{{ neighborhood }}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <a class="btn btn-danger" href="#" role="button">Search</a>
+            <!-- <button type="submit" class="btn btn-primary"><a href="#">Search</a></button> -->
+          </div>
+          <!-- <button type="submit" class="btn btn-primary"><a href="#">Search</a></button> -->
         </form>
-
       </div>
-
     </div>
 
     <div id="bottom">

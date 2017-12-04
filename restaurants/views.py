@@ -10,7 +10,9 @@ def index(request):
     #template = loader.get_template('restaurants/index.html')
     context = {
         'restaurant_list': restaurant_list,
-        'all_neighborhoods': Restaurant.get_all_neighborhoods()
+        'all_neighborhoods': Restaurant.get_all_neighborhoods(),
+        'all_categories': Restaurant.get_all_categories(),
+        'all_prices_ranges': Restaurant.get_all_prices_ranges()
     }
     return render(request, 'restaurants/index.html', context)
 

@@ -52,18 +52,43 @@ class Restaurant(models.Model):
         return self.name
 
     @staticmethod
+    def get_all_prices_ranges():
+        dls = Restaurant.objects.order_by().values_list('dollar_signs').distinct()
+        dollar_signs = []
+        for row in dls:
+            dl = row[0]
+            if not dl:
+                continue
+            if dl not in dollar_signs:
+                dollar_signs.append(dl)
+        dollar_signs.sort()
+        return dollar_signs
+
+    def get_all_categories():
+        categories_unsplit = Restaurant.objects.order_by().values_list('category').distinct()
+        categories = []
+        for row in categories_unsplit:
+            categories_str = row[0]
+            if not categories_str:
+                continue
+            for category in categories_str.split(','):
+                c = category.strip()
+                if c not in categories:
+                    categories.append(c)
+        categories.sort()
+        return categories
+
     def get_all_neighborhoods():
         neighborhoods_unsplit = Restaurant.objects.order_by().values_list('neighborhood').distinct()
-
-        neighborhoods = set()
+        # neighborhoods = set()
+        neighborhoods = []
         for row in neighborhoods_unsplit:
-
             neighborhoods_str = row[0]
-
             if not neighborhoods_str:
                 continue
-
             for neighborhood in neighborhoods_str.split(','):
-                neighborhoods.add(neighborhood)
-
+                n = neighborhood.strip()
+                if n not in neighborhoods:
+                    neighborhoods.append(n)
+        neighborhoods.sort()
         return neighborhoods
