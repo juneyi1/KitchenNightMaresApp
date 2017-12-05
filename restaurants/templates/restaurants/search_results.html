@@ -1,0 +1,7 @@
+{% if not restaurants %}
+  No restaurants found for these search results.
+{% else %}
+  {% for restaurant in restaurants %}
+    {{ restaurant }}
+  {% endfor %}
+{% endif %}

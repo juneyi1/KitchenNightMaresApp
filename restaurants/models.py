@@ -64,6 +64,7 @@ class Restaurant(models.Model):
         dollar_signs.sort()
         return dollar_signs
 
+    @staticmethod
     def get_all_categories():
         categories_unsplit = Restaurant.objects.order_by().values_list('category').distinct()
         categories = []
@@ -78,9 +79,10 @@ class Restaurant(models.Model):
         categories.sort()
         return categories
 
+    @staticmethod
     def get_all_neighborhoods():
         neighborhoods_unsplit = Restaurant.objects.order_by().values_list('neighborhood').distinct()
-        # neighborhoods = set()
+
         neighborhoods = []
         for row in neighborhoods_unsplit:
             neighborhoods_str = row[0]
@@ -92,3 +94,13 @@ class Restaurant(models.Model):
                     neighborhoods.append(n)
         neighborhoods.sort()
         return neighborhoods
+
+    @staticmethod
+    def get_from_search(neighborhood, price_range, category):
+        result = Restaurant.objects.filter(
+            neighborhood=neighborhood,
+            dollar_signs=price_range,
+            category=category
+        )
+
+        return [i for i in result]
