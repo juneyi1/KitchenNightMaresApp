@@ -1,7 +1,47 @@
-{% if not restaurants %}
-  No restaurants found for these search results.
-{% else %}
-  {% for restaurant in restaurants %}
-    {{ restaurant }}
-  {% endfor %}
-{% endif %}
+<html>
+  <head>
+    <title>Search results - KNDS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style type="text/css">
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 36px;
+      }
+
+      #display-results {
+        padding-left: 45px;
+        padding-top: 30px;
+      }
+
+      #display-results li {
+        font-size: 24px;
+      }
+
+      #header {
+        text-decoration: underline;
+        font-size: 30px
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg justify-content-between" style="background-color: #d32323;">
+        <a style="color: black" class="navbar-brand" href="{% url 'restaurants:index' %}">Kitchen Nightmare with Data Science</a>
+    </nav>
+    <div id="display-results">
+      {% if not restaurants %}
+        <span>No restaurants found for these search results.</span>
+      {% else %}
+        <span id="header">
+          Search results:
+        </span>
+        <ul>
+          {% for restaurant in restaurants %}
+            <li><a href="{% url 'restaurants:detail' restaurant.id %}">{{ restaurant }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </body>
+</html>
