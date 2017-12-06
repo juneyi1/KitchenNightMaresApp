@@ -1,10 +1,14 @@
 from django import forms
 
+from .models import Restaurant
+
 
 class SearchForm(forms.Form):
-    price_range = forms.CharField(max_length=5)
-    neighborhood = forms.CharField(max_length=50)
-    category = forms.CharField(max_length=30)
+    # See: https://docs.djangoproject.com/en/dev/ref/models/fields/#field-choices
+    # and: https://stackoverflow.com/questions/8859504/django-form-dropdown-list-of-numbers
+    price_range = forms.ChoiceField(Restaurant.get_price_range_choices)
+    neighborhood = forms.ChoiceField(Restaurant.get_neighborhood_choices)
+    category = forms.ChoiceField(Restaurant.get_category_choices)
 
     def clean(self):
         cleaned_data = super(SearchForm, self).clean()

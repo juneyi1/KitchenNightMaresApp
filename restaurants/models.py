@@ -1,12 +1,12 @@
 from django.db import models
 
-# Create your models here.
+
 class Restaurant(models.Model):
     yelp_id = models.CharField(max_length=200, default='N/A')
     name = models.CharField(max_length=200, default='N/A')
     claimed = models.IntegerField(default=0)
     ratings = models.FloatField(default=0.0)
-    ratings_notation = models.CharField(max_length=200,default='0')
+    ratings_notation = models.CharField(max_length=200, default='0')
     review = models.IntegerField(default=0)
     dollar_signs = models.CharField(max_length=200, default='')
     category = models.CharField(max_length=200, default='N/A')
@@ -14,7 +14,7 @@ class Restaurant(models.Model):
     address1 = models.CharField(max_length=200, default='')
     address2 = models.CharField(max_length=200, default='')
     between = models.CharField(max_length=200, default='')
-    neighborhood= models.CharField(max_length=200, default='')
+    neighborhood = models.CharField(max_length=200, default='')
     phone = models.CharField(max_length=200, default='')
     website = models.CharField(max_length=200, default='')
     mon = models.CharField(max_length=200, default='N/A')
@@ -104,3 +104,18 @@ class Restaurant(models.Model):
         )
 
         return [i for i in result]
+
+    @staticmethod
+    def get_neighborhood_choices():
+        choices = Restaurant.get_all_neighborhoods()
+        return [(c, c) for c in choices]
+
+    @staticmethod
+    def get_category_choices():
+        choices = Restaurant.get_all_categories()
+        return [(c, c) for c in choices]
+
+    @staticmethod
+    def get_price_range_choices():
+        choices = Restaurant.get_all_prices_ranges()
+        return [(c, c) for c in choices]
