@@ -6,3 +6,4 @@ db.sqlite3
 restaurants/templates/restaurants/detail_bk.html
 database.csv
 pg_credential.py
+.DS_Store

@@ -1,12 +1,12 @@
 from django.db import models
 
-# Create your models here.
+
 class Restaurant(models.Model):
     yelp_id = models.CharField(max_length=200, default='N/A')
     name = models.CharField(max_length=200, default='N/A')
     claimed = models.IntegerField(default=0)
     ratings = models.FloatField(default=0.0)
-    ratings_notation = models.CharField(max_length=200,default='0')
+    ratings_notation = models.CharField(max_length=200, default='0')
     review = models.IntegerField(default=0)
     dollar_signs = models.CharField(max_length=200, default='')
     category = models.CharField(max_length=200, default='N/A')
@@ -14,7 +14,7 @@ class Restaurant(models.Model):
     address1 = models.CharField(max_length=200, default='')
     address2 = models.CharField(max_length=200, default='')
     between = models.CharField(max_length=200, default='')
-    neighborhood= models.CharField(max_length=200, default='')
+    neighborhood = models.CharField(max_length=200, default='')
     phone = models.CharField(max_length=200, default='')
     website = models.CharField(max_length=200, default='')
     mon = models.CharField(max_length=200, default='N/A')
@@ -64,6 +64,7 @@ class Restaurant(models.Model):
         dollar_signs.sort()
         return dollar_signs
 
+    @staticmethod
     def get_all_categories():
         categories_unsplit = Restaurant.objects.order_by().values_list('category').distinct()
         categories = []
@@ -78,9 +79,10 @@ class Restaurant(models.Model):
         categories.sort()
         return categories
 
+    @staticmethod
     def get_all_neighborhoods():
         neighborhoods_unsplit = Restaurant.objects.order_by().values_list('neighborhood').distinct()
-        # neighborhoods = set()
+
         neighborhoods = []
         for row in neighborhoods_unsplit:
             neighborhoods_str = row[0]
@@ -92,3 +94,39 @@ class Restaurant(models.Model):
                     neighborhoods.append(n)
         neighborhoods.sort()
         return neighborhoods
+
+    @staticmethod
+    def get_from_search(neighborhood, price_range, category):
+        filter_options = {}
+
+        if neighborhood:
+            filter_options['neighborhood__contains'] = neighborhood
+
+        if price_range:
+            filter_options['price_range'] = price_range
+
+        if category:
+            filter_options['category__contains'] = category
+
+        result = Restaurant.objects.filter(**filter_options)
+
+        return [i for i in result]
+
+    @staticmethod
+    def get_neighborhood_choices():
+        choices = Restaurant.get_all_neighborhoods()
+        return [("", "neighborhood")] + Restaurant._format_for_choices(choices)
+
+    @staticmethod
+    def get_category_choices():
+        choices = Restaurant.get_all_categories()
+        return [("", "category")] + Restaurant._format_for_choices(choices)
+
+    @staticmethod
+    def get_price_range_choices():
+        choices = Restaurant.get_all_prices_ranges()
+        return [("", "price range")] + Restaurant._format_for_choices(choices)
+
+    @staticmethod
+    def _format_for_choices(items):
+        return [(i, i) for i in items]
