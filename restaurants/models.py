@@ -97,25 +97,36 @@ class Restaurant(models.Model):
 
     @staticmethod
     def get_from_search(neighborhood, price_range, category):
-        result = Restaurant.objects.filter(
-            neighborhood=neighborhood,
-            dollar_signs=price_range,
-            category=category
-        )
+        filter_options = {}
+
+        if neighborhood:
+            filter_options['neighborhood__contains'] = neighborhood
+
+        if price_range:
+            filter_options['price_range'] = price_range
+
+        if category:
+            filter_options['category__contains'] = category
+
+        result = Restaurant.objects.filter(**filter_options)
 
         return [i for i in result]
 
     @staticmethod
     def get_neighborhood_choices():
         choices = Restaurant.get_all_neighborhoods()
-        return [(c, c) for c in choices]
+        return [("", "neighborhood")] + Restaurant._format_for_choices(choices)
 
     @staticmethod
     def get_category_choices():
         choices = Restaurant.get_all_categories()
-        return [(c, c) for c in choices]
+        return [("", "category")] + Restaurant._format_for_choices(choices)
 
     @staticmethod
     def get_price_range_choices():
         choices = Restaurant.get_all_prices_ranges()
-        return [(c, c) for c in choices]
+        return [("", "price range")] + Restaurant._format_for_choices(choices)
+
+    @staticmethod
+    def _format_for_choices(items):
+        return [(i, i) for i in items]

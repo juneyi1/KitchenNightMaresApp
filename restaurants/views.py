@@ -11,9 +11,9 @@ def index(request):
 
     context = {
         'restaurant_list': restaurant_list,
-        'all_neighborhoods': Restaurant.get_all_neighborhoods(),
-        'all_categories': Restaurant.get_all_categories(),
-        'all_prices_ranges': Restaurant.get_all_prices_ranges(),
+        # 'all_neighborhoods': Restaurant.get_all_neighborhoods(),
+        # 'all_categories': Restaurant.get_all_categories(),
+        # 'all_prices_ranges': Restaurant.get_all_prices_ranges(),
 
         'form': SearchForm()  # Empty search form
     }
