@@ -9,4 +9,5 @@ urlpatterns = [
     # ex: /1/
     url(r'^(?P<restaurant_id>[0-9]+)/$', views.detail, name='detail'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^select/$', views.select, name='select')
 ]

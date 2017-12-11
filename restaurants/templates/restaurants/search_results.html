@@ -3,23 +3,394 @@
     <title>Search results - KNDS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <style type="text/css">
+      html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+      blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+      img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u,
+      i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+      caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+      embed, figure, figcaption, footer, header, hgroup, menu, nav, output,
+      ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      ul {
+        list-style: none;
+      }
       .navbar-brand {
         font-weight: bold;
         font-size: 36px;
       }
-
       #display-results {
         padding-left: 45px;
         padding-top: 30px;
       }
-
       #display-results li {
         font-size: 24px;
       }
-
       #header {
         text-decoration: underline;
         font-size: 30px
+      }
+      .search-header {
+        padding-top: 12px;
+        padding-bottom: 7px;
+      }
+      .layout-full .column-alpha {
+        float: left;
+        padding: 0 15px;
+        min-height: 1px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .top-shelf-grey {
+          background: #f5f5f5;
+          border-bottom: 1px solid #e6e6e6;
+      }
+      .top-shelf {
+        width: 100%;
+        min-width: 1020px;
+        position: relative;
+        padding-top: 15px;
+        height: 125px;
+      }
+      .search-header .search-header-title-container {
+        width: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: baseline;
+        -moz-box-align: baseline;
+        -ms-flex-align: baseline;
+        box-align: baseline;
+        -webkit-align-items: baseline;
+        align-items: baseline;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        justify-content: space-between;
+      }
+      .search-header h1 {
+        font-size: 21px;
+        line-height: 1.28571em;
+        color: #333;
+      }
+      .search-header h1, .search-header h3 {
+        float: left;
+        -webkit-box-flex: 1 1 auto;
+        -moz-box-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: 0;
+        padding-top: 6px;
+      }
+      h1 {
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 30px;
+        line-height: 1.2em;
+        color: #333;
+        padding-top: 6px;
+      }
+      .search-header h1 .query-location {
+        font-weight: normal;
+      }
+      .main-content-wrap {
+        min-width: 1020px;
+      }
+      .main-content-wrap--full {
+        background: white;
+      }
+      .main-content-wrap--full>.content-container {
+        padding-top: 15px;
+        padding-bottom: 36px;
+      }
+      .content-container {
+        width: 960px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      .scroll-map-container {
+        position: relative;
+      }
+      .layout-block {
+        margin: 0 -15px;
+      }
+      .layout-a .column-alpha {
+        float: left;
+        padding: 0 15px;
+        min-height: 1px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 66.66667%;
+      }
+      element.style {
+        position: relative;
+        min-height: 362px;
+      }
+      ul, menu, dir {
+        display: block;
+        list-style-type: disc;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 40px;
+        list-style: decimal;
+      }
+      .search-results>li:first-child {
+        border-top: 1px solid #e6e6e6;
+        padding-top: 17px;
+      }
+      .ylist-bordered>li {
+        margin: 0;
+        padding: 18px 0;
+        border-bottom: 1px solid #e6e6e6;
+        padding-bottom: 17px;
+        width: 630px;
+        height: 132px;
+      }
+      .ylist>li {
+        margin-bottom: 12px;
+      }
+      div {
+        display: block;
+      }
+      .indexed-biz-archive .biz-listing-large {
+        margin: 0 -15px;
+      }
+      .indexed-biz-archive .main-attributes {
+        float: left;
+        padding: 0 15px;
+        min-height: 1px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 62.5%;
+      }
+      .media-block {
+        position: relative;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      }
+      .media-block--12>.media-avatar {
+        border-right: 12px solid transparent;
+        border-left: none;
+      }
+      a {
+        color: #0073bb;
+        text-decoration: none;
+      }
+      a:-webkit-any-link {
+        color: -webkit-link;
+        cursor: auto;
+        text-decoration: underline;
+      }
+      .photo-box a:visited img {
+        outline: none;
+      }
+      .photo-box .photo-box-img {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: antiquewhite;
+        width: 90px;
+        height: 90px;
+      }
+      .percentage {
+        position: relative;
+        top:  20px;
+        left: 10px;
+        vertical-align: top;
+        font-size: 40px;
+        font-weight: bold;
+        font-style: oblique;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .media-story {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        min-width: 0;
+        min-height: 0;
+      }
+      .search-result-title {
+        font-weight: normal;
+        margin-bottom: 6px;
+      }
+      h3 {
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 16px;
+        line-height: 1.3125em;
+        color: #d32323;
+      }
+      h3, .h3 {
+        font-size: 14px;
+      }
+      h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+        font-weight: bold;
+        color: #d32323;
+        margin: 0 0 6px;
+      }
+      .search-result .indexed-biz-name {
+        color: #333;
+      }
+      .indexed-biz-name {
+        display: block;
+      }
+      .biz-listing-large .biz-name {
+        font-size: 16px;
+        line-height: 1.3125em;
+      }
+      .indexed-biz-name .biz-name {
+        display: inline;
+      }
+      .mapbox-map {
+        overflow: hidden;
+        height: 135px;
+        border: 1px solid #ccc;
+        background-color: antiquewhite;
+      }
+      .search-result-title a {
+        padding: 3px 0;
+      }
+      .biz-rating-large {
+        margin: 6px 0;
+      }
+      .biz-rating-large .rating-large {
+        float: left;
+        margin: -1px 6px 0 0;
+      }
+      .rating, .rating-large, .rating-very-large {
+        position: relative;
+        overflow: hidden;
+      }
+      /*@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+      .i-stars {
+        background-image: url(https://s3-media1.fl.yelpcdn.com/assets/srv0/yelp_design_web/de2252bea656/assets/img/stars/stars@2x.png);
+      }*/
+      .offscreen {
+        clip: rect(0 0 0 0);
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+      }
+      .i-stars--regular-5 {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -402px;
+      }
+      .i-stars--regular-4-half {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -384px;
+      }
+      .i-stars--regular-4 {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -366px;
+      }
+      .i-stars--regular-3-half {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -348px;
+      }
+      .i-stars--regular-3 {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -330px;
+      }
+      .i-stars--regular-2-half {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -312px;
+      }
+      .i-stars--regular-2 {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -294px;
+      }
+      .i-stars--regular-1-half {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -276px;
+      }
+      .i-stars--regular-1 {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -258px;
+      }
+      .i-stars--regular-0 {
+        background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;
+        width: 102px;
+        height: 18px;
+        background-position: 0 -240px;
+      }
+
+
+      .i-stars {
+        /*background: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png) no-repeat;*/
+        background-size: 132px 560px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .rating-qualifier {
+        display: block;
+        float: left;
+        color: #666;
+        font-weight: normal;
+      }
+      .price-category {
+        clear: both;
+      }
+      .price-range {
+        letter-spacing: 1px;
+        white-space: nowrap;
       }
     </style>
   </head>
@@ -29,19 +400,102 @@
     <nav class="navbar navbar-expand-lg justify-content-between" style="background-color: #d32323;">
         <a style="color: black" class="navbar-brand" href="{% url 'restaurants:index' %}">Kitchen Nightmare with Data Science</a>
     </nav>
-    <div id="display-results">
-      {% if not restaurants %}
-        <span>No restaurants found for these search results.</span>
-      {% else %}
-        <span id="header">
-          Search results:
-        </span>
-        <ul>
-          {% for restaurant in restaurants %}
-            <li><a href="{% url 'restaurants:detail' restaurant.id %}">{{ restaurant }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+    <div class="main-content-wrap main-content-wrap--full">
+      <div class="top-shelf top-shelf-grey">
+        <div class="content-container">
+          <div class="layout-block layout-full search-page-top">
+          <div class="column column-alpha">
+            <div class="search-header clearfix" data-component-bound="true">
+              <div class="search-header-title-container">
+                  <h1>
+                    Search Results Restaurants <span class="query-location">in Chicago, IL</span>
+                  </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div id="super-container" class="content-container">
+        <div class="container">
+          <div class="clearfix layout-block layout-a scroll-map-container search-results-block">
+            <div class="column column-alpha ">
+              <div class="results-wrapper indexed-biz-archive" data-component-bound="true" style="position: relative; min-height: 362px;">
+                <div class="search-results-content">
+                  <ul class="ylist ylist-bordered search-results yloca-pills-blue yloca-wrapper-dark-grey">
+                  </ul>
+                  {% if not restaurants %}
+                    <span>No restaurants found for these search results.</span>
+                  {% else %}
+                    <ul class="ylist ylist-bordered search-results yloca-pills-blue yloca-wrapper-dark-grey">
+                      {% for restaurant in restaurants %}
+                        {% if restaurant.permanently_closed == 0 %}
+                          <li class="regular-search-result">
+                            <div class="search-result natural-search-result" data-biz-id="Nk4H9CkU8B1VPAofaB2qcQ" data-key="1">
+                              <div class="biz-listing-large">
+                              <div class="main-attributes">
+                                <div class="media-block media-block--12">
+                                  <div class="media-avatar">
+                                    <div class="photo-box pb-90s">
+                                        <div class="photo-box-img">                                        <!-- <div class="probability">Chance of closing:</div> -->
+                                          <div class="percentage">{{restaurant.prediction}}%</div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="media-story">
+                                    <h3 class="search-result-title">
+                                        <span class="indexed-biz-name">
+                                          <a class="biz-name js-analytics-click" data-analytics-label="biz-name" href="{% url 'restaurants:detail' restaurant.id %}" data-hovercard-id="2oFxXZNs1ApLsAxf9Z7Hig">
+                                            <span>{{ restaurant.name }}</span>
+                                          </a>
+                                        </span>
+                                    </h3>
+                                    <div class="biz-rating biz-rating-large clearfix">
+                                      <div class="i-stars i-stars--regular-{{restaurant.ratings_notation}} rating-large" title="5.0 star rating">
+                                          <img class="offscreen" height="303" src="https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png" width="84" alt="5.0 star rating">
+                                      </div>
+                                      <span class="review-count rating-qualifier"> {{restaurant.review}} reviews</span>
+                                    </div>
+                                    <div class="price-category">
+                                      <span class="bullet-after">
+                                        <span class="business-attribute price-range">{{restaurant.dollar_signs}}</span>
+                                      </span>
+                                      <span class="category-str-list">
+                                        <a href="#">{{restaurant.category}}</a>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="secondary-attributes">
+                                <span class="neighborhood-str-list">
+                                  {{restaurant.neighborhood}}
+                                </span>
+                                <address>
+                                  {{restaurant.address1}}<br>{{restaurant.address2}}
+                                </address>
+                                <span class="offscreen">Phone number</span>
+                                <span class="biz-phone">
+                                    {{ restaurant.phone }}
+                                </span>
+                              </div>
+                           </div>
+                            </div>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="column column-beta ">
+            </div>
+            <div class="right-rail-yla-wrapper" data-component-bound="true"></div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </body>
 </html>

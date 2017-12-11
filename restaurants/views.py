@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Restaurant
 from .forms import SearchForm
+from .forms import SelectForm
 
 
 def index(request):
@@ -14,8 +15,8 @@ def index(request):
         # 'all_neighborhoods': Restaurant.get_all_neighborhoods(),
         # 'all_categories': Restaurant.get_all_categories(),
         # 'all_prices_ranges': Restaurant.get_all_prices_ranges(),
-
-        'form': SearchForm()  # Empty search form
+        'select': SelectForm(),  # Empty search form
+        'form': SearchForm(),  # Empty search form
     }
     return render(request, 'restaurants/index.html', context)
 
@@ -46,3 +47,21 @@ def search(request):
                   'restaurants/search_results.html',
                   {'restaurants': possible_restaurants}
                   )
+
+def select(request):
+    select = SelectForm(request.GET)
+
+    if not select.is_valid():
+        # Error!
+        return HttpResponse(status=500)
+
+    name = select.data['name']
+
+    restaurants = Restaurant.get_from_select(name)
+    if len(restaurants) > 1:
+        return render(request,
+                      'restaurants/search_results.html',
+                      {'restaurants': restaurants}
+                      )
+    else:
+        return render(request, 'restaurants/detail.html', {'restaurant': restaurants[0]})

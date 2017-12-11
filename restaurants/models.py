@@ -96,6 +96,23 @@ class Restaurant(models.Model):
         return neighborhoods
 
     @staticmethod
+    def get_all_names():
+        filter_options = {}
+        filter_options['permanently_closed'] = 0
+        names_unsplit = Restaurant.objects.filter(**filter_options).order_by().values_list('name').distinct()
+        names = []
+        for row in names_unsplit:
+            names_str = row[0]
+            if not names_str:
+                continue
+            for name in names_str.split(','):
+                n = name.strip()
+                if n not in names:
+                    names.append(n)
+        names.sort()
+        return names
+
+    @staticmethod
     def get_from_search(neighborhood, price_range, category):
         filter_options = {}
 
@@ -103,14 +120,27 @@ class Restaurant(models.Model):
             filter_options['neighborhood__contains'] = neighborhood
 
         if price_range:
-            filter_options['price_range'] = price_range
+            filter_options['dollar_signs'] = price_range
 
         if category:
             filter_options['category__contains'] = category
 
-        result = Restaurant.objects.filter(**filter_options)
+        filter_options['permanently_closed'] = 0
+        result = Restaurant.objects.filter(**filter_options).order_by('-prediction')
 
         return [i for i in result]
+
+    @staticmethod
+    def get_from_select(name):
+        filter_options = {}
+        if name:
+            filter_options['name'] = name
+        result = Restaurant.objects.filter(**filter_options).order_by('-prediction')
+        return [i for i in result]
+
+    @staticmethod
+    def _format_for_choices(items):
+        return [(i, i) for i in items]
 
     @staticmethod
     def get_neighborhood_choices():
@@ -128,5 +158,6 @@ class Restaurant(models.Model):
         return [("", "price range")] + Restaurant._format_for_choices(choices)
 
     @staticmethod
-    def _format_for_choices(items):
-        return [(i, i) for i in items]
+    def get_name_choices():
+        choices = Restaurant.get_all_names()
+        return [("", "name")] + Restaurant._format_for_choices(choices)

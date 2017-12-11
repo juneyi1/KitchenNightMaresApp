@@ -19,3 +19,8 @@ class SearchForm(forms.Form):
         #     raise forms.ValidationError(
         #         'You must select a value for all inputs!'
         #     )
+
+class SelectForm(forms.Form):
+    # See: https://docs.djangoproject.com/en/dev/ref/models/fields/#field-choices
+    # and: https://stackoverflow.com/questions/8859504/django-form-dropdown-list-of-numbers
+    name = forms.ChoiceField(Restaurant.get_name_choices, required=False)

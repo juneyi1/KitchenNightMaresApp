@@ -29,12 +29,14 @@
 
       .data_science {
           position: relative;
-          top: 325px;
-          left: -400px;
+          top: 345px;
+          /*left: -380px;*/
           text-align: center;
           font-size: 50px;
           color: #d32323;
           font-weight: 900;
+          width: 43%;
+          /*height: 500%;*/
       }
 
       .btn-danger {
@@ -43,7 +45,7 @@
 
       .dropdown_position {
           position: relative;
-          left: 265px;
+          left: 205px;
       }
 
       #option_text {
@@ -69,7 +71,7 @@
   </head>
   <body>
 
-    <div class="y-container homepage-hero" style="background-image: url({% static 'background.jpeg' %})">
+    <div class="y-container homepage-hero" style="background-image: url({% static 'background.jpeg' %})" position="relative">
       <p class="data_science"> WITH DATA SCIENCE</p>
     </div>
 
@@ -78,32 +80,26 @@
     </div>
 
     <div class="row" id="option_text">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <p>Select a restaurant</p>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <p>Search for restaurant</p>
         </div>
     </div>
 
     <div class="row">
-      <div class="col-lg-6">
-          <div class="dropdown dropdown_position">
-            {% if restaurant_list %}
-              <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Restaurant Name
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for restaurant in restaurant_list %}
-                  <a class="dropdown-item" href="{% url 'restaurants:detail' restaurant.id %}">{{ restaurant.name }}</a>
-                {% endfor %}
+      <div class="col-lg-5">
+          <form action="{% url 'restaurants:select' %}" method="get">
+            <div class="row" style="float: right;padding-right: 100px;">
+              <div class="form-group search">
+                  {{ select.name }}
               </div>
-            {% else %}
-              <p>No restaurants are available.</p>
-            {% endif %}
-          </div>
+              <input type="submit" value="Select" class="btn btn-danger" role="button"/>
+            </div>
+          </form>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <form action="{% url 'restaurants:search' %}" method="get">
           <div class="row" style="float: right;padding-right: 100px;">
             <div class="form-group search">
